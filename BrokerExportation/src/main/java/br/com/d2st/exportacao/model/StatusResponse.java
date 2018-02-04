@@ -34,12 +34,12 @@ public class StatusResponse implements Serializable  {
 	private MessageNumber messageNumber;
 	
 	@Enumerated(EnumType.STRING)
-	private MessageKind messageKing;
+	private MessageKind messageKind;
 	
 	private String sbeln;
 	
 	@ManyToOne
-	private Company company;	
+	private Client client;	
 	
 	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="statusResponse")
 	private List<ErrorResponse> errorsResponse = new ArrayList<>();
@@ -84,12 +84,12 @@ public class StatusResponse implements Serializable  {
 		this.messageNumber = messageNumber;
 	}
 
-	public MessageKind getMessageKing() {
-		return messageKing;
+	public MessageKind getMessageKind() {
+		return messageKind;
 	}
 
-	public void setMessageKing(MessageKind messageKing) {
-		this.messageKing = messageKing;
+	public void setMessageKind(MessageKind messageKind) {
+		this.messageKind = messageKind;
 	}
 
 	public String getSbeln() {
@@ -100,12 +100,12 @@ public class StatusResponse implements Serializable  {
 		this.sbeln = sbeln;
 	}
 
-	public Company getCompany() {
-		return company;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setCompany(Company company) {
-		this.company = company;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public List<ErrorResponse> getErrorsResponse() {
@@ -147,11 +147,8 @@ public class StatusResponse implements Serializable  {
 
 	@Override
 	public String toString() {
-		
-		return "StatusResponse [id=" + id + ", code=" + code + ", dataResponse=" + dataResponse + ", messageNumber="
-				+ messageNumber + ", company=" + company.getName() + "]";
+		return "StatusResponse [id=" + id + ", sbeln=" + sbeln + ", client=" + client.getId() + "]";
 	}
-	
 	
 	
 }

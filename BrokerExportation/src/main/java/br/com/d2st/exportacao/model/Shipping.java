@@ -38,8 +38,7 @@ public class Shipping implements Serializable{
 	private MessageKind messageKind;
 	
 	@ManyToOne
-	private Company company;
-
+	private Client client;
 	
 
 	public Long getId() {
@@ -90,12 +89,12 @@ public class Shipping implements Serializable{
 		this.messageKind = messageKind;
 	}
 
-	public Company getCompany() {
-		return company;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setCompany(Company company) {
-		this.company = company;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public static long getSerialversionuid() {
@@ -138,9 +137,9 @@ public class Shipping implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Shipping [id=" + id + ", sbeln=" + sbeln + ", messageKind=" + messageKind.getMessageKing() + ", company=" + company.getName()
-				+ "]";
+		return "Shipping [id=" + id + ", sbeln=" + sbeln + ", messageKind=" + messageKind + ", client=" + client.getId() + "]";
 	}
+
 
 	
 }

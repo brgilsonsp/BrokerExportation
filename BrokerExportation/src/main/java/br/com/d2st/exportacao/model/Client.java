@@ -1,12 +1,16 @@
 package br.com.d2st.exportacao.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -32,6 +36,12 @@ public class Client implements Serializable{
 	
 	@ManyToOne
 	private Company company;
+	
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="client")
+	private List<Shipping> shipments = new ArrayList<>();
+	
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="client")
+	private List<StatusResponse> statusResponse = new ArrayList<>();
 
 	
 	public Long getId() {

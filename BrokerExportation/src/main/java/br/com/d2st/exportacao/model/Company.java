@@ -28,12 +28,6 @@ public class Company implements Serializable {
 	
 	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="company")
 	private List<Client> clients = new ArrayList<>();
-	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="company")
-	private List<Shipping> shipments = new ArrayList<>();
-	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="company")
-	private List<StatusResponse> statusResponse = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -57,22 +51,6 @@ public class Company implements Serializable {
 
 	public void setClients(List<Client> clients) {
 		this.clients = clients;
-	}
-
-	public List<Shipping> getShipments() {
-		return shipments;
-	}
-
-	public void setShipments(List<Shipping> shipments) {
-		this.shipments = shipments;
-	}
-
-	public List<StatusResponse> getStatusResponse() {
-		return statusResponse;
-	}
-
-	public void setStatusResponse(List<StatusResponse> statusResponse) {
-		this.statusResponse = statusResponse;
 	}
 
 	public static long getSerialversionuid() {
