@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class ErrorResponse implements Serializable  {
 
@@ -21,8 +23,18 @@ public class ErrorResponse implements Serializable  {
 	
 	private String descr;
 	
+	@NotEmpty
 	@ManyToOne
 	private StatusResponse statusResponse;
+	
+	@Deprecated
+	public ErrorResponse() { }
+	
+	public ErrorResponse(String code, String descr, StatusResponse statusResponse) {
+		this.code = code;
+		this.descr = descr;
+		this.statusResponse = statusResponse;
+	}
 
 	public Long getId() {
 		return id;

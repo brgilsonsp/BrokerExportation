@@ -23,21 +23,31 @@ public class AddinfoTabTgteduep implements Serializable{
 	@ManyToOne
 	private Tgteduep tgteduep;
 	
-	private String Type;
+	private String type;
 
-    private String DUEID;
+    private String dueid;
 
-    private String DUEPOSNR;
+    private String dueposnr;
 
-    private String STMTPCODE;
+    private String stmtpcode;
 
-    private String STMCODE;
+    private String stmcode;
 
-    private String LMTDTTIME;
+    private String lmtdttime;
 
-    private String DTTMSTR;
+    private String dttmstr;
 
-    private String DESCRIPTION;
+    private String description;
+    
+    @Deprecated
+	public AddinfoTabTgteduep() {	}
+
+	public AddinfoTabTgteduep(Long id, Tgteduep tgteduep, String type) {
+		super();
+		this.id = id;
+		this.tgteduep = tgteduep;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -56,67 +66,67 @@ public class AddinfoTabTgteduep implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getDUEPOSNR() {
-		return DUEPOSNR;
+	public String getDueposnr() {
+		return dueposnr;
 	}
 
-	public void setDUEPOSNR(String dUEPOSNR) {
-		DUEPOSNR = dUEPOSNR;
+	public void setDueposnr(String dueposnr) {
+		this.dueposnr = dueposnr;
 	}
 
-	public String getSTMTPCODE() {
-		return STMTPCODE;
+	public String getStmtpcode() {
+		return stmtpcode;
 	}
 
-	public void setSTMTPCODE(String sTMTPCODE) {
-		STMTPCODE = sTMTPCODE;
+	public void setStmtpcode(String stmtpcode) {
+		this.stmtpcode = stmtpcode;
 	}
 
-	public String getSTMCODE() {
-		return STMCODE;
+	public String getStmcode() {
+		return stmcode;
 	}
 
-	public void setSTMCODE(String sTMCODE) {
-		STMCODE = sTMCODE;
+	public void setStmcode(String stmcode) {
+		this.stmcode = stmcode;
 	}
 
-	public String getLMTDTTIME() {
-		return LMTDTTIME;
+	public String getLmtdttime() {
+		return lmtdttime;
 	}
 
-	public void setLMTDTTIME(String lMTDTTIME) {
-		LMTDTTIME = lMTDTTIME;
+	public void setLmtdttime(String lmtdttime) {
+		this.lmtdttime = lmtdttime;
 	}
 
-	public String getDTTMSTR() {
-		return DTTMSTR;
+	public String getDttmstr() {
+		return dttmstr;
 	}
 
-	public void setDTTMSTR(String dTTMSTR) {
-		DTTMSTR = dTTMSTR;
+	public void setDttmstr(String dttmstr) {
+		this.dttmstr = dttmstr;
 	}
 
-	public String getDESCRIPTION() {
-		return DESCRIPTION;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDESCRIPTION(String dESCRIPTION) {
-		DESCRIPTION = dESCRIPTION;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public static long getSerialversionuid() {
@@ -150,7 +160,7 @@ public class AddinfoTabTgteduep implements Serializable{
 
 	@Override
 	public String toString() {
-		return "AddinfoTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", DUEID=" + DUEID + "]";
+		return "AddinfoTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", type=" + type + "]";
 	}
 
 }

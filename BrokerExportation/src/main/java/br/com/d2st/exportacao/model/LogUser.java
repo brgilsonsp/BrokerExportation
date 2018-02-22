@@ -1,49 +1,42 @@
 package br.com.d2st.exportacao.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Str implements Serializable{
+public class LogUser implements Serializable{
 
-	private static final long serialVersionUID = -7060382316125557260L;
+	private static final long serialVersionUID = -362990038006532189L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty
-	private String type;
+	private String dateTime;
 	
 	@NotEmpty
-	private String xmlvr;
+	private String action;
 	
 	@NotEmpty
-	private String envrm;
-	
-	@NotEmpty
-	private String intnr;
-	
-	@OneToMany(mappedBy="str")
-	private List<RequestEdx> requests = new ArrayList<>();
+	@ManyToOne(fetch = FetchType.EAGER)
+	private User user;
 	
 	@Deprecated
-	public Str() { }
-		
-	public Str(String type, String xmlvr, String envrm, String intnr) {
-		this.type = type;
-		this.xmlvr = xmlvr;
-		this.envrm = envrm;
-		this.intnr = intnr;
+	public LogUser() { }
+	
+	public LogUser(String dateTime, String action, User user) {
+		this.dateTime = dateTime;
+		this.action = action;
+		this.user = user;
 	}
 
 	public Long getId() {
@@ -54,36 +47,28 @@ public class Str implements Serializable{
 		this.id = id;
 	}
 
-	public String getType() {
-		return type;
+	public String getDateTime() {
+		return dateTime;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
 	}
 
-	public String getXmlvr() {
-		return xmlvr;
+	public String getAction() {
+		return action;
 	}
 
-	public void setXmlvr(String xmlvr) {
-		this.xmlvr = xmlvr;
+	public void setAction(String action) {
+		this.action = action;
 	}
 
-	public String getEnvrm() {
-		return envrm;
+	public User getUser() {
+		return user;
 	}
 
-	public void setEnvrm(String envrm) {
-		this.envrm = envrm;
-	}
-
-	public String getIntnr() {
-		return intnr;
-	}
-
-	public void setIntnr(String intnr) {
-		this.intnr = intnr;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public static long getSerialversionuid() {
@@ -106,7 +91,7 @@ public class Str implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Str other = (Str) obj;
+		LogUser other = (LogUser) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -117,8 +102,7 @@ public class Str implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Str [id=" + id + ", xmlvr=" + xmlvr + ", envrm=" + envrm + ", intnr=" + intnr + "]";
+		return "LogUser [id=" + id + ", user=" + user.getName() + "]";
 	}
 
-	
 }

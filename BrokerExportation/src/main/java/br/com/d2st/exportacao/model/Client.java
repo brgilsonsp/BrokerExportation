@@ -11,10 +11,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"idbr", "idcl"}))
 public class Client implements Serializable{
 		
 	private static final long serialVersionUID = 2537922461409852534L;
@@ -34,16 +38,30 @@ public class Client implements Serializable{
 	
 	private String nameLdcl;
 	
+	@NotNull
 	@ManyToOne
 	private Company company;
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="client")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="client", orphanRemoval=true)
 	private List<Shipping> shipments = new ArrayList<>();
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="client")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="client", orphanRemoval=true)
 	private List<StatusResponse> statusResponse = new ArrayList<>();
 
+	@OneToMany(mappedBy="user")
+	private List<LogUser> logs = new ArrayList<>();
 	
+	@Deprecated	
+	public Client() { }
+
+	public Client(String idbr, String idcl, String shkey, String nameLdcl, Company company) {
+		this.idbr = idbr;
+		this.idcl = idcl;
+		this.shkey = shkey;
+		this.nameLdcl = nameLdcl;
+		this.company = company;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -90,6 +108,30 @@ public class Client implements Serializable{
 
 	public void setCompany(Company company) {
 		this.company = company;
+	}
+
+	public List<Shipping> getShipments() {
+		return shipments;
+	}
+
+	public void setShipments(List<Shipping> shipments) {
+		this.shipments = shipments;
+	}
+
+	public List<StatusResponse> getStatusResponse() {
+		return statusResponse;
+	}
+
+	public void setStatusResponse(List<StatusResponse> statusResponse) {
+		this.statusResponse = statusResponse;
+	}
+
+	public List<LogUser> getLogs() {
+		return logs;
+	}
+
+	public void setLogs(List<LogUser> logs) {
+		this.logs = logs;
 	}
 
 	public static long getSerialversionuid() {

@@ -1,50 +1,33 @@
 package br.com.d2st.exportacao.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Str implements Serializable{
+public class Txpns implements Serializable{
 
-	private static final long serialVersionUID = -7060382316125557260L;
-	
+	private static final long serialVersionUID = 4084289730039568115L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotEmpty
+
 	private String type;
+
+	private String kschl;
+
+	private String netwr;
 	
 	@NotEmpty
-	private String xmlvr;
-	
-	@NotEmpty
-	private String envrm;
-	
-	@NotEmpty
-	private String intnr;
-	
-	@OneToMany(mappedBy="str")
-	private List<RequestEdx> requests = new ArrayList<>();
-	
-	@Deprecated
-	public Str() { }
-		
-	public Str(String type, String xmlvr, String envrm, String intnr) {
-		this.type = type;
-		this.xmlvr = xmlvr;
-		this.envrm = envrm;
-		this.intnr = intnr;
-	}
+	@ManyToOne
+	private Tpck tpck;
 
 	public Long getId() {
 		return id;
@@ -62,28 +45,28 @@ public class Str implements Serializable{
 		this.type = type;
 	}
 
-	public String getXmlvr() {
-		return xmlvr;
+	public String getKschl() {
+		return kschl;
 	}
 
-	public void setXmlvr(String xmlvr) {
-		this.xmlvr = xmlvr;
+	public void setKschl(String kschl) {
+		this.kschl = kschl;
 	}
 
-	public String getEnvrm() {
-		return envrm;
+	public String getNetwr() {
+		return netwr;
 	}
 
-	public void setEnvrm(String envrm) {
-		this.envrm = envrm;
+	public void setNetwr(String netwr) {
+		this.netwr = netwr;
 	}
 
-	public String getIntnr() {
-		return intnr;
+	public Tpck getTpck() {
+		return tpck;
 	}
 
-	public void setIntnr(String intnr) {
-		this.intnr = intnr;
+	public void setTpck(Tpck tpck) {
+		this.tpck = tpck;
 	}
 
 	public static long getSerialversionuid() {
@@ -106,7 +89,7 @@ public class Str implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Str other = (Str) obj;
+		Txpns other = (Txpns) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -117,8 +100,7 @@ public class Str implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Str [id=" + id + ", xmlvr=" + xmlvr + ", envrm=" + envrm + ", intnr=" + intnr + "]";
+		return "Txpns [id=" + id + ", tpck=" + tpck.getId() + "]";
 	}
 
-	
 }

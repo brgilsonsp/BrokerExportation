@@ -23,23 +23,32 @@ public class AtoconTabTgteduep implements Serializable{
 	@ManyToOne
 	private Tgteduep tgteduep;
 	
-	private String Type;
+	private String type;
 
-    private String DUEID;
+    private String dueid;
 
-    private String DUEPOSNR;
+    private String dueposnr;
 
-    private String ATOCON;
+    private String atocon;
 
-    private String ATOCONITM;
+    private String atoconitm;
 
-    private String VLRCOMCOB;
+    private String vlrcomcob;
 
-    private String VLRSEMCOB;
+    private String vlrsemcob;
 
-    private String STEUC;
+    private String steuc;
 
-    private String CNPJ_BENEF;
+    private String cnpj_benef;
+
+    @Deprecated
+	public AtoconTabTgteduep() { }
+
+	public AtoconTabTgteduep(Tgteduep tgteduep, String type) {
+		super();
+		this.tgteduep = tgteduep;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -58,75 +67,75 @@ public class AtoconTabTgteduep implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getDUEPOSNR() {
-		return DUEPOSNR;
+	public String getDueposnr() {
+		return dueposnr;
 	}
 
-	public void setDUEPOSNR(String dUEPOSNR) {
-		DUEPOSNR = dUEPOSNR;
+	public void setDueposnr(String dueposnr) {
+		this.dueposnr = dueposnr;
 	}
 
-	public String getATOCON() {
-		return ATOCON;
+	public String getAtocon() {
+		return atocon;
 	}
 
-	public void setATOCON(String aTOCON) {
-		ATOCON = aTOCON;
+	public void setAtocon(String atocon) {
+		this.atocon = atocon;
 	}
 
-	public String getATOCONITM() {
-		return ATOCONITM;
+	public String getAtoconitm() {
+		return atoconitm;
 	}
 
-	public void setATOCONITM(String aTOCONITM) {
-		ATOCONITM = aTOCONITM;
+	public void setAtoconitm(String atoconitm) {
+		this.atoconitm = atoconitm;
 	}
 
-	public String getVLRCOMCOB() {
-		return VLRCOMCOB;
+	public String getVlrcomcob() {
+		return vlrcomcob;
 	}
 
-	public void setVLRCOMCOB(String vLRCOMCOB) {
-		VLRCOMCOB = vLRCOMCOB;
+	public void setVlrcomcob(String vlrcomcob) {
+		this.vlrcomcob = vlrcomcob;
 	}
 
-	public String getVLRSEMCOB() {
-		return VLRSEMCOB;
+	public String getVlrsemcob() {
+		return vlrsemcob;
 	}
 
-	public void setVLRSEMCOB(String vLRSEMCOB) {
-		VLRSEMCOB = vLRSEMCOB;
+	public void setVlrsemcob(String vlrsemcob) {
+		this.vlrsemcob = vlrsemcob;
 	}
 
-	public String getSTEUC() {
-		return STEUC;
+	public String getSteuc() {
+		return steuc;
 	}
 
-	public void setSTEUC(String sTEUC) {
-		STEUC = sTEUC;
+	public void setSteuc(String steuc) {
+		this.steuc = steuc;
 	}
 
-	public String getCNPJ_BENEF() {
-		return CNPJ_BENEF;
+	public String getCnpj_benef() {
+		return cnpj_benef;
 	}
 
-	public void setCNPJ_BENEF(String cNPJ_BENEF) {
-		CNPJ_BENEF = cNPJ_BENEF;
+	public void setCnpj_benef(String cnpj_benef) {
+		this.cnpj_benef = cnpj_benef;
 	}
 
 	public static long getSerialversionuid() {
@@ -160,9 +169,8 @@ public class AtoconTabTgteduep implements Serializable{
 
 	@Override
 	public String toString() {
-		return "AtoconTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", DUEID=" + DUEID + "]";
+		return "AtoconTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", type=" + type + "]";
 	}
     
     
-
 }

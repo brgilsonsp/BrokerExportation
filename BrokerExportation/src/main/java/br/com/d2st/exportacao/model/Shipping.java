@@ -1,7 +1,10 @@
 package br.com.d2st.exportacao.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -9,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -37,9 +41,27 @@ public class Shipping implements Serializable{
 	@NotEmpty
 	private MessageKind messageKind;
 	
+	@NotEmpty
 	@ManyToOne
 	private Client client;
 	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "shipping")
+	private List<Tgteshkn> tgteshkn = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "shipping")
+	private List<Tpck> tpck = new ArrayList<>();
+
+	@Deprecated
+	public Shipping() {	}
+
+	public Shipping(String sbeln, String stcod, String descr, String lasup, MessageKind messageKind, Client client) {
+		this.sbeln = sbeln;
+		this.stcod = stcod;
+		this.descr = descr;
+		this.lasup = lasup;
+		this.messageKind = messageKind;
+		this.client = client;
+	}
 
 	public Long getId() {
 		return id;
@@ -95,6 +117,22 @@ public class Shipping implements Serializable{
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public List<Tgteshkn> getTgteshkn() {
+		return tgteshkn;
+	}
+
+	public void setTgteshkn(List<Tgteshkn> tgteshkn) {
+		this.tgteshkn = tgteshkn;
+	}
+
+	public List<Tpck> getTpck() {
+		return tpck;
+	}
+
+	public void setTpck(List<Tpck> tpck) {
+		this.tpck = tpck;
 	}
 
 	public static long getSerialversionuid() {

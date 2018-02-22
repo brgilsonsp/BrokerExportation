@@ -23,9 +23,17 @@ public class MaktxText implements Serializable {
 	@ManyToOne
 	private Tgteshpn tgteshpn;
 	
-	private String Type;
+	private String type;
 
-	private String TEXT;
+	private String text;
+	
+	@Deprecated
+	public MaktxText() { }
+
+	public MaktxText(Tgteshpn tgteshpn, String type) {
+		this.tgteshpn = tgteshpn;
+		type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -44,19 +52,19 @@ public class MaktxText implements Serializable {
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getTEXT() {
-		return TEXT;
+	public String getText() {
+		return text;
 	}
 
-	public void setTEXT(String tEXT) {
-		TEXT = tEXT;
+	public void setText(String text) {
+		this.text = text;
 	}
 
 	public static long getSerialversionuid() {
@@ -90,7 +98,7 @@ public class MaktxText implements Serializable {
 
 	@Override
 	public String toString() {
-		return "MaktxText [id=" + id + ", tgteshpn=" + tgteshpn.getId() + "]";
+		return "MaktxText [id=" + id + ", tgteshpn=" + tgteshpn.getId() + ", type=" + type + "]";
 	}
 	
 	

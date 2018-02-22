@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,155 +26,165 @@ public class Tgteshkn implements Serializable{
 	private Long id;
 	
 	@NotEmpty
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	private Shipping shipping;
 		
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<Tgteshpn> tgteshpn = new ArrayList<>();
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<Tgteprd> tgteprd = new ArrayList<>();
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<ShpText> shpText = new ArrayList<>();	
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<Tgteres> tgteres = new ArrayList<>();
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<Tgteduek> tgteduek = new ArrayList<>();
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshkn", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<Tgteduep> tgteduep = new ArrayList<>();
 	
-	private String Type;
+	private String type;
 
 	@Transient
-    private String SBELN;
+    private String sbeln;
     
-    private String LOCSE;
+    private String locse;
     
-    private String TIPSE;
+    private String tipse;
 
-    private String TSETMP;
+    private String tsetmp;
 
-    private String SEDAT;
+    private String sedat;
 
-    private String ETADT;
+    private String etadt;
 
-    private String ENVDT;
+    private String envdt;
 
-    private String PREVDT;
+    private String prevdt;
     
-    private String TRANS;
+    private String trans;
 
-    private String ZOLLAO;
+    private String zollao;
 
-    private String ZLANDO;
+    private String zlando;
 
-    private String ZOLLAD;
+    private String zollad;
 
-    private String ZLANDD;
+    private String zlandd;
 
-    private String NETWR;
+    private String netwr;
 
-    private String WAERSRF;
+    private String waersrf;
 
-    private String INCO1;
+    private String inco1;
 
-    private String ZTERM;
+    private String zterm;
 
-    private String SESTAT;
+    private String sestat;
 
-    private String WAERS;
+    private String waers;
 
-    private String BFMAR;
+    private String bfmar;
 
-    private String SHPTRIP;
+    private String shptrip;
 
-    private String ETDDT;
+    private String etddt;
 
-    private String BLNMB;
+    private String blnmb;
 
-    private String BLDTA;
+    private String bldta;
 
-    private String HSAWB;
+    private String hsawb;
 
-    private String SHPNAM;
+    private String shpnam;
 
-    private String INVNR;
+    private String invnr;
     
-    private String DT_INVNR;
+    private String dt_invnr;
     
-    private String VOLUM;
+    private String volum;
 
-    private String NTGEW;
+    private String ntgew;
 
-    private String BRGEW;
+    private String brgew;
 
-    private String VLFRETE;
+    private String vlfrete;
 
-    private String MOEDAFRT;
+    private String moedafrt;
 
-    private String VLSEGURO;
+    private String vlseguro;
 
-    private String MOEDASGR;
+    private String moedasgr;
 
-    private String VLCOAGT;
+    private String vlcoagt;
 
-    private String MOEDACOAGT;
+    private String moedacoagt;
 
-    private String PCCOAGT;
+    private String pccoagt;
 
-    private String TPCOAGT;
+    private String tpcoagt;
 
-    private String DTCLTC;
+    private String dtcltc;
     
-    private String DTEARM;
+    private String dtearm;
 
-    private String DTENTC;
+    private String dtentc;
     
-    private String URFDESP;
+    private String urfdesp;
 
-    private String URFEMBA;
+    private String urfemba;
 
-    private String MODPAG;
+    private String modpag;
 
-    private String BASCOM;
+    private String bascom;
 
-    private String PRECLCT;
+    private String preclct;
 
-    private String DTCOLETA;
+    private String dtcoleta;
 
-    private String DTCHGARM;
+    private String dtchgarm;
 
-    private String DTPRESC;
+    private String dtpresc;
 
-    private String DTAVERB;
+    private String dtaverb;
 
-    private String DTENTREGA;
+    private String dtentrega;
 
-    private String BROKNM;
+    private String broknm;
 
-    private String NMBOOK;
+    private String nmbook;
 
-    private String DTBOOK;
+    private String dtbook;
 
-    private String TPVEIC;
+    private String tpveic;
 
-    private String TPCARG;
+    private String tpcarg;
 
-    private String UFEMBARQ;
+    private String ufembarq;
 
-    private String INSTNEG;
+    private String instneg;
 
-    private String TPPRP;
+    private String tpprp;
     
-    private String DTSHIP;
+    private String dtship;
 
-    private String NROCE;
+    private String nroce;
 
-    private String DTCE;
+    private String dtce;
+    
+    @Deprecated
+	public Tgteshkn() { }
+
+	public Tgteshkn(Shipping shipping, String type, String sbeln) {
+		super();
+		this.shipping = shipping;
+		this.type = type;
+		this.sbeln = sbeln;
+	}
 
 	public Long getId() {
 		return id;
@@ -182,7 +193,7 @@ public class Tgteshkn implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public Shipping getShipping() {
 		return shipping;
 	}
@@ -197,518 +208,6 @@ public class Tgteshkn implements Serializable{
 
 	public void setTgteshpn(List<Tgteshpn> tgteshpn) {
 		this.tgteshpn = tgteshpn;
-	}
-
-	public String getType() {
-		return Type;
-	}
-
-	public void setType(String type) {
-		Type = type;
-	}
-
-	public String getSBELN() {
-		return SBELN;
-	}
-
-	public void setSBELN(String sBELN) {
-		SBELN = sBELN;
-	}
-
-	public String getLOCSE() {
-		return LOCSE;
-	}
-
-	public void setLOCSE(String lOCSE) {
-		LOCSE = lOCSE;
-	}
-
-	public String getTIPSE() {
-		return TIPSE;
-	}
-
-	public void setTIPSE(String tIPSE) {
-		TIPSE = tIPSE;
-	}
-
-	public String getTSETMP() {
-		return TSETMP;
-	}
-
-	public void setTSETMP(String tSETMP) {
-		TSETMP = tSETMP;
-	}
-
-	public String getSEDAT() {
-		return SEDAT;
-	}
-
-	public void setSEDAT(String sEDAT) {
-		SEDAT = sEDAT;
-	}
-
-	public String getETADT() {
-		return ETADT;
-	}
-
-	public void setETADT(String eTADT) {
-		ETADT = eTADT;
-	}
-
-	public String getENVDT() {
-		return ENVDT;
-	}
-
-	public void setENVDT(String eNVDT) {
-		ENVDT = eNVDT;
-	}
-
-	public String getPREVDT() {
-		return PREVDT;
-	}
-
-	public void setPREVDT(String pREVDT) {
-		PREVDT = pREVDT;
-	}
-
-	public String getTRANS() {
-		return TRANS;
-	}
-
-	public void setTRANS(String tRANS) {
-		TRANS = tRANS;
-	}
-
-	public String getZOLLAO() {
-		return ZOLLAO;
-	}
-
-	public void setZOLLAO(String zOLLAO) {
-		ZOLLAO = zOLLAO;
-	}
-
-	public String getZLANDO() {
-		return ZLANDO;
-	}
-
-	public void setZLANDO(String zLANDO) {
-		ZLANDO = zLANDO;
-	}
-
-	public String getZOLLAD() {
-		return ZOLLAD;
-	}
-
-	public void setZOLLAD(String zOLLAD) {
-		ZOLLAD = zOLLAD;
-	}
-
-	public String getZLANDD() {
-		return ZLANDD;
-	}
-
-	public void setZLANDD(String zLANDD) {
-		ZLANDD = zLANDD;
-	}
-
-	public String getNETWR() {
-		return NETWR;
-	}
-
-	public void setNETWR(String nETWR) {
-		NETWR = nETWR;
-	}
-
-	public String getWAERSRF() {
-		return WAERSRF;
-	}
-
-	public void setWAERSRF(String wAERSRF) {
-		WAERSRF = wAERSRF;
-	}
-
-	public String getINCO1() {
-		return INCO1;
-	}
-
-	public void setINCO1(String iNCO1) {
-		INCO1 = iNCO1;
-	}
-
-	public String getZTERM() {
-		return ZTERM;
-	}
-
-	public void setZTERM(String zTERM) {
-		ZTERM = zTERM;
-	}
-
-	public String getSESTAT() {
-		return SESTAT;
-	}
-
-	public void setSESTAT(String sESTAT) {
-		SESTAT = sESTAT;
-	}
-
-	public String getWAERS() {
-		return WAERS;
-	}
-
-	public void setWAERS(String wAERS) {
-		WAERS = wAERS;
-	}
-
-	public String getBFMAR() {
-		return BFMAR;
-	}
-
-	public void setBFMAR(String bFMAR) {
-		BFMAR = bFMAR;
-	}
-
-	public String getSHPTRIP() {
-		return SHPTRIP;
-	}
-
-	public void setSHPTRIP(String sHPTRIP) {
-		SHPTRIP = sHPTRIP;
-	}
-
-	public String getETDDT() {
-		return ETDDT;
-	}
-
-	public void setETDDT(String eTDDT) {
-		ETDDT = eTDDT;
-	}
-
-	public String getBLNMB() {
-		return BLNMB;
-	}
-
-	public void setBLNMB(String bLNMB) {
-		BLNMB = bLNMB;
-	}
-
-	public String getBLDTA() {
-		return BLDTA;
-	}
-
-	public void setBLDTA(String bLDTA) {
-		BLDTA = bLDTA;
-	}
-
-	public String getHSAWB() {
-		return HSAWB;
-	}
-
-	public void setHSAWB(String hSAWB) {
-		HSAWB = hSAWB;
-	}
-
-	public String getSHPNAM() {
-		return SHPNAM;
-	}
-
-	public void setSHPNAM(String sHPNAM) {
-		SHPNAM = sHPNAM;
-	}
-
-	public String getINVNR() {
-		return INVNR;
-	}
-
-	public void setINVNR(String iNVNR) {
-		INVNR = iNVNR;
-	}
-
-	public String getDT_INVNR() {
-		return DT_INVNR;
-	}
-
-	public void setDT_INVNR(String dT_INVNR) {
-		DT_INVNR = dT_INVNR;
-	}
-
-	public String getVOLUM() {
-		return VOLUM;
-	}
-
-	public void setVOLUM(String vOLUM) {
-		VOLUM = vOLUM;
-	}
-
-	public String getNTGEW() {
-		return NTGEW;
-	}
-
-	public void setNTGEW(String nTGEW) {
-		NTGEW = nTGEW;
-	}
-
-	public String getBRGEW() {
-		return BRGEW;
-	}
-
-	public void setBRGEW(String bRGEW) {
-		BRGEW = bRGEW;
-	}
-
-	public String getVLFRETE() {
-		return VLFRETE;
-	}
-
-	public void setVLFRETE(String vLFRETE) {
-		VLFRETE = vLFRETE;
-	}
-
-	public String getMOEDAFRT() {
-		return MOEDAFRT;
-	}
-
-	public void setMOEDAFRT(String mOEDAFRT) {
-		MOEDAFRT = mOEDAFRT;
-	}
-
-	public String getVLSEGURO() {
-		return VLSEGURO;
-	}
-
-	public void setVLSEGURO(String vLSEGURO) {
-		VLSEGURO = vLSEGURO;
-	}
-
-	public String getMOEDASGR() {
-		return MOEDASGR;
-	}
-
-	public void setMOEDASGR(String mOEDASGR) {
-		MOEDASGR = mOEDASGR;
-	}
-
-	public String getVLCOAGT() {
-		return VLCOAGT;
-	}
-
-	public void setVLCOAGT(String vLCOAGT) {
-		VLCOAGT = vLCOAGT;
-	}
-
-	public String getMOEDACOAGT() {
-		return MOEDACOAGT;
-	}
-
-	public void setMOEDACOAGT(String mOEDACOAGT) {
-		MOEDACOAGT = mOEDACOAGT;
-	}
-
-	public String getPCCOAGT() {
-		return PCCOAGT;
-	}
-
-	public void setPCCOAGT(String pCCOAGT) {
-		PCCOAGT = pCCOAGT;
-	}
-
-	public String getTPCOAGT() {
-		return TPCOAGT;
-	}
-
-	public void setTPCOAGT(String tPCOAGT) {
-		TPCOAGT = tPCOAGT;
-	}
-
-	public String getDTCLTC() {
-		return DTCLTC;
-	}
-
-	public void setDTCLTC(String dTCLTC) {
-		DTCLTC = dTCLTC;
-	}
-
-	public String getDTEARM() {
-		return DTEARM;
-	}
-
-	public void setDTEARM(String dTEARM) {
-		DTEARM = dTEARM;
-	}
-
-	public String getDTENTC() {
-		return DTENTC;
-	}
-
-	public void setDTENTC(String dTENTC) {
-		DTENTC = dTENTC;
-	}
-
-	public String getURFDESP() {
-		return URFDESP;
-	}
-
-	public void setURFDESP(String uRFDESP) {
-		URFDESP = uRFDESP;
-	}
-
-	public String getURFEMBA() {
-		return URFEMBA;
-	}
-
-	public void setURFEMBA(String uRFEMBA) {
-		URFEMBA = uRFEMBA;
-	}
-
-	public String getMODPAG() {
-		return MODPAG;
-	}
-
-	public void setMODPAG(String mODPAG) {
-		MODPAG = mODPAG;
-	}
-
-	public String getBASCOM() {
-		return BASCOM;
-	}
-
-	public void setBASCOM(String bASCOM) {
-		BASCOM = bASCOM;
-	}
-
-	public String getPRECLCT() {
-		return PRECLCT;
-	}
-
-	public void setPRECLCT(String pRECLCT) {
-		PRECLCT = pRECLCT;
-	}
-
-	public String getDTCOLETA() {
-		return DTCOLETA;
-	}
-
-	public void setDTCOLETA(String dTCOLETA) {
-		DTCOLETA = dTCOLETA;
-	}
-
-	public String getDTCHGARM() {
-		return DTCHGARM;
-	}
-
-	public void setDTCHGARM(String dTCHGARM) {
-		DTCHGARM = dTCHGARM;
-	}
-
-	public String getDTPRESC() {
-		return DTPRESC;
-	}
-
-	public void setDTPRESC(String dTPRESC) {
-		DTPRESC = dTPRESC;
-	}
-
-	public String getDTAVERB() {
-		return DTAVERB;
-	}
-
-	public void setDTAVERB(String dTAVERB) {
-		DTAVERB = dTAVERB;
-	}
-
-	public String getDTENTREGA() {
-		return DTENTREGA;
-	}
-
-	public void setDTENTREGA(String dTENTREGA) {
-		DTENTREGA = dTENTREGA;
-	}
-
-	public String getBROKNM() {
-		return BROKNM;
-	}
-
-	public void setBROKNM(String bROKNM) {
-		BROKNM = bROKNM;
-	}
-
-	public String getNMBOOK() {
-		return NMBOOK;
-	}
-
-	public void setNMBOOK(String nMBOOK) {
-		NMBOOK = nMBOOK;
-	}
-
-	public String getDTBOOK() {
-		return DTBOOK;
-	}
-
-	public void setDTBOOK(String dTBOOK) {
-		DTBOOK = dTBOOK;
-	}
-
-	public String getTPVEIC() {
-		return TPVEIC;
-	}
-
-	public void setTPVEIC(String tPVEIC) {
-		TPVEIC = tPVEIC;
-	}
-
-	public String getTPCARG() {
-		return TPCARG;
-	}
-
-	public void setTPCARG(String tPCARG) {
-		TPCARG = tPCARG;
-	}
-
-	public String getUFEMBARQ() {
-		return UFEMBARQ;
-	}
-
-	public void setUFEMBARQ(String uFEMBARQ) {
-		UFEMBARQ = uFEMBARQ;
-	}
-
-	public String getINSTNEG() {
-		return INSTNEG;
-	}
-
-	public void setINSTNEG(String iNSTNEG) {
-		INSTNEG = iNSTNEG;
-	}
-
-	public String getTPPRP() {
-		return TPPRP;
-	}
-
-	public void setTPPRP(String tPPRP) {
-		TPPRP = tPPRP;
-	}
-
-	public String getDTSHIP() {
-		return DTSHIP;
-	}
-
-	public void setDTSHIP(String dTSHIP) {
-		DTSHIP = dTSHIP;
-	}
-
-	public String getNROCE() {
-		return NROCE;
-	}
-
-	public void setNROCE(String nROCE) {
-		NROCE = nROCE;
-	}
-
-	public String getDTCE() {
-		return DTCE;
-	}
-
-	public void setDTCE(String dTCE) {
-		DTCE = dTCE;
 	}
 
 	public List<Tgteprd> getTgteprd() {
@@ -751,6 +250,518 @@ public class Tgteshkn implements Serializable{
 		this.tgteduep = tgteduep;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getSbeln() {
+		return sbeln;
+	}
+
+	public void setSbeln(String sbeln) {
+		this.sbeln = sbeln;
+	}
+
+	public String getLocse() {
+		return locse;
+	}
+
+	public void setLocse(String locse) {
+		this.locse = locse;
+	}
+
+	public String getTipse() {
+		return tipse;
+	}
+
+	public void setTipse(String tipse) {
+		this.tipse = tipse;
+	}
+
+	public String getTsetmp() {
+		return tsetmp;
+	}
+
+	public void setTsetmp(String tsetmp) {
+		this.tsetmp = tsetmp;
+	}
+
+	public String getSedat() {
+		return sedat;
+	}
+
+	public void setSedat(String sedat) {
+		this.sedat = sedat;
+	}
+
+	public String getEtadt() {
+		return etadt;
+	}
+
+	public void setEtadt(String etadt) {
+		this.etadt = etadt;
+	}
+
+	public String getEnvdt() {
+		return envdt;
+	}
+
+	public void setEnvdt(String envdt) {
+		this.envdt = envdt;
+	}
+
+	public String getPrevdt() {
+		return prevdt;
+	}
+
+	public void setPrevdt(String prevdt) {
+		this.prevdt = prevdt;
+	}
+
+	public String getTrans() {
+		return trans;
+	}
+
+	public void setTrans(String trans) {
+		this.trans = trans;
+	}
+
+	public String getZollao() {
+		return zollao;
+	}
+
+	public void setZollao(String zollao) {
+		this.zollao = zollao;
+	}
+
+	public String getZlando() {
+		return zlando;
+	}
+
+	public void setZlando(String zlando) {
+		this.zlando = zlando;
+	}
+
+	public String getZollad() {
+		return zollad;
+	}
+
+	public void setZollad(String zollad) {
+		this.zollad = zollad;
+	}
+
+	public String getZlandd() {
+		return zlandd;
+	}
+
+	public void setZlandd(String zlandd) {
+		this.zlandd = zlandd;
+	}
+
+	public String getNetwr() {
+		return netwr;
+	}
+
+	public void setNetwr(String netwr) {
+		this.netwr = netwr;
+	}
+
+	public String getWaersrf() {
+		return waersrf;
+	}
+
+	public void setWaersrf(String waersrf) {
+		this.waersrf = waersrf;
+	}
+
+	public String getInco1() {
+		return inco1;
+	}
+
+	public void setInco1(String inco1) {
+		this.inco1 = inco1;
+	}
+
+	public String getZterm() {
+		return zterm;
+	}
+
+	public void setZterm(String zterm) {
+		this.zterm = zterm;
+	}
+
+	public String getSestat() {
+		return sestat;
+	}
+
+	public void setSestat(String sestat) {
+		this.sestat = sestat;
+	}
+
+	public String getWaers() {
+		return waers;
+	}
+
+	public void setWaers(String waers) {
+		this.waers = waers;
+	}
+
+	public String getBfmar() {
+		return bfmar;
+	}
+
+	public void setBfmar(String bfmar) {
+		this.bfmar = bfmar;
+	}
+
+	public String getShptrip() {
+		return shptrip;
+	}
+
+	public void setShptrip(String shptrip) {
+		this.shptrip = shptrip;
+	}
+
+	public String getEtddt() {
+		return etddt;
+	}
+
+	public void setEtddt(String etddt) {
+		this.etddt = etddt;
+	}
+
+	public String getBlnmb() {
+		return blnmb;
+	}
+
+	public void setBlnmb(String blnmb) {
+		this.blnmb = blnmb;
+	}
+
+	public String getBldta() {
+		return bldta;
+	}
+
+	public void setBldta(String bldta) {
+		this.bldta = bldta;
+	}
+
+	public String getHsawb() {
+		return hsawb;
+	}
+
+	public void setHsawb(String hsawb) {
+		this.hsawb = hsawb;
+	}
+
+	public String getShpnam() {
+		return shpnam;
+	}
+
+	public void setShpnam(String shpnam) {
+		this.shpnam = shpnam;
+	}
+
+	public String getInvnr() {
+		return invnr;
+	}
+
+	public void setInvnr(String invnr) {
+		this.invnr = invnr;
+	}
+
+	public String getDt_invnr() {
+		return dt_invnr;
+	}
+
+	public void setDt_invnr(String dt_invnr) {
+		this.dt_invnr = dt_invnr;
+	}
+
+	public String getVolum() {
+		return volum;
+	}
+
+	public void setVolum(String volum) {
+		this.volum = volum;
+	}
+
+	public String getNtgew() {
+		return ntgew;
+	}
+
+	public void setNtgew(String ntgew) {
+		this.ntgew = ntgew;
+	}
+
+	public String getBrgew() {
+		return brgew;
+	}
+
+	public void setBrgew(String brgew) {
+		this.brgew = brgew;
+	}
+
+	public String getVlfrete() {
+		return vlfrete;
+	}
+
+	public void setVlfrete(String vlfrete) {
+		this.vlfrete = vlfrete;
+	}
+
+	public String getMoedafrt() {
+		return moedafrt;
+	}
+
+	public void setMoedafrt(String moedafrt) {
+		this.moedafrt = moedafrt;
+	}
+
+	public String getVlseguro() {
+		return vlseguro;
+	}
+
+	public void setVlseguro(String vlseguro) {
+		this.vlseguro = vlseguro;
+	}
+
+	public String getMoedasgr() {
+		return moedasgr;
+	}
+
+	public void setMoedasgr(String moedasgr) {
+		this.moedasgr = moedasgr;
+	}
+
+	public String getVlcoagt() {
+		return vlcoagt;
+	}
+
+	public void setVlcoagt(String vlcoagt) {
+		this.vlcoagt = vlcoagt;
+	}
+
+	public String getMoedacoagt() {
+		return moedacoagt;
+	}
+
+	public void setMoedacoagt(String moedacoagt) {
+		this.moedacoagt = moedacoagt;
+	}
+
+	public String getPccoagt() {
+		return pccoagt;
+	}
+
+	public void setPccoagt(String pccoagt) {
+		this.pccoagt = pccoagt;
+	}
+
+	public String getTpcoagt() {
+		return tpcoagt;
+	}
+
+	public void setTpcoagt(String tpcoagt) {
+		this.tpcoagt = tpcoagt;
+	}
+
+	public String getDtcltc() {
+		return dtcltc;
+	}
+
+	public void setDtcltc(String dtcltc) {
+		this.dtcltc = dtcltc;
+	}
+
+	public String getDtearm() {
+		return dtearm;
+	}
+
+	public void setDtearm(String dtearm) {
+		this.dtearm = dtearm;
+	}
+
+	public String getDtentc() {
+		return dtentc;
+	}
+
+	public void setDtentc(String dtentc) {
+		this.dtentc = dtentc;
+	}
+
+	public String getUrfdesp() {
+		return urfdesp;
+	}
+
+	public void setUrfdesp(String urfdesp) {
+		this.urfdesp = urfdesp;
+	}
+
+	public String getUrfemba() {
+		return urfemba;
+	}
+
+	public void setUrfemba(String urfemba) {
+		this.urfemba = urfemba;
+	}
+
+	public String getModpag() {
+		return modpag;
+	}
+
+	public void setModpag(String modpag) {
+		this.modpag = modpag;
+	}
+
+	public String getBascom() {
+		return bascom;
+	}
+
+	public void setBascom(String bascom) {
+		this.bascom = bascom;
+	}
+
+	public String getPreclct() {
+		return preclct;
+	}
+
+	public void setPreclct(String preclct) {
+		this.preclct = preclct;
+	}
+
+	public String getDtcoleta() {
+		return dtcoleta;
+	}
+
+	public void setDtcoleta(String dtcoleta) {
+		this.dtcoleta = dtcoleta;
+	}
+
+	public String getDtchgarm() {
+		return dtchgarm;
+	}
+
+	public void setDtchgarm(String dtchgarm) {
+		this.dtchgarm = dtchgarm;
+	}
+
+	public String getDtpresc() {
+		return dtpresc;
+	}
+
+	public void setDtpresc(String dtpresc) {
+		this.dtpresc = dtpresc;
+	}
+
+	public String getDtaverb() {
+		return dtaverb;
+	}
+
+	public void setDtaverb(String dtaverb) {
+		this.dtaverb = dtaverb;
+	}
+
+	public String getDtentrega() {
+		return dtentrega;
+	}
+
+	public void setDtentrega(String dtentrega) {
+		this.dtentrega = dtentrega;
+	}
+
+	public String getBroknm() {
+		return broknm;
+	}
+
+	public void setBroknm(String broknm) {
+		this.broknm = broknm;
+	}
+
+	public String getNmbook() {
+		return nmbook;
+	}
+
+	public void setNmbook(String nmbook) {
+		this.nmbook = nmbook;
+	}
+
+	public String getDtbook() {
+		return dtbook;
+	}
+
+	public void setDtbook(String dtbook) {
+		this.dtbook = dtbook;
+	}
+
+	public String getTpveic() {
+		return tpveic;
+	}
+
+	public void setTpveic(String tpveic) {
+		this.tpveic = tpveic;
+	}
+
+	public String getTpcarg() {
+		return tpcarg;
+	}
+
+	public void setTpcarg(String tpcarg) {
+		this.tpcarg = tpcarg;
+	}
+
+	public String getUfembarq() {
+		return ufembarq;
+	}
+
+	public void setUfembarq(String ufembarq) {
+		this.ufembarq = ufembarq;
+	}
+
+	public String getInstneg() {
+		return instneg;
+	}
+
+	public void setInstneg(String instneg) {
+		this.instneg = instneg;
+	}
+
+	public String getTpprp() {
+		return tpprp;
+	}
+
+	public void setTpprp(String tpprp) {
+		this.tpprp = tpprp;
+	}
+
+	public String getDtship() {
+		return dtship;
+	}
+
+	public void setDtship(String dtship) {
+		this.dtship = dtship;
+	}
+
+	public String getNroce() {
+		return nroce;
+	}
+
+	public void setNroce(String nroce) {
+		this.nroce = nroce;
+	}
+
+	public String getDtce() {
+		return dtce;
+	}
+
+	public void setDtce(String dtce) {
+		this.dtce = dtce;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -782,9 +793,9 @@ public class Tgteshkn implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Tgteshkn [id=" + id + ", shipping=" + shipping.getSbeln() + "]";
+		return "Tgteshkn [id=" + id + ", shipping=" + shipping.getId() + ", sbeln=" + sbeln + "]";
 	}
     
     
-	
+
 }

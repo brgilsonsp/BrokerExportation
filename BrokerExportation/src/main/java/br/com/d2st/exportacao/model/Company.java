@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,8 +27,24 @@ public class Company implements Serializable {
 	@NotEmpty
 	private String name;
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="company")
+	@Column(unique=true)
+	@NotEmpty
+	private String cnpj;
+	
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="company", orphanRemoval=true)
 	private List<Client> clients = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.REMOVE, mappedBy="company", orphanRemoval=true)
+	private List<User> users = new ArrayList<>();
+	
+	@Deprecated
+	public Company() { }
+	
+	public Company(String name, String cnpj, List<Client> clients) {
+		this.name = name;
+		this.cnpj = cnpj;
+		this.clients = clients;
+	}
 
 	public Long getId() {
 		return id;
@@ -43,6 +60,14 @@ public class Company implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	public List<Client> getClients() {
@@ -84,8 +109,7 @@ public class Company implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Company [id=" + id + ", name=" + name + "]";
+		return "Company [id=" + id + ", name=" + name + ", cnpj=" + cnpj + "]";
 	}
-	
-	
+
 }

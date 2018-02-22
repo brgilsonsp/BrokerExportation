@@ -23,39 +23,48 @@ public class Tgteprd implements Serializable{
 	@ManyToOne
 	private Tgteshkn tgteshkn;
 
-	private String Type;
+	private String type;
 
-    private String PARVW;
+    private String parvw;
 
-    private String PARID;
+    private String parid;
 
-    private String NAME1;
+    private String name1;
 
-    private String NAME2;
+    private String name2;
 
-    private String STREET;
+    private String street;
     
-    private String HOUSE_NUM1;
+    private String house_num1;
 
-    private String HOUSE_NUM2;
+    private String house_num2;
 
-    private String POST_CODE1;
+    private String post_code1;
 
-    private String CITY1;
+    private String city1;
 
-    private String CITY2;
+    private String city2;
 
-    private String PSTLZ;
+    private String pstlz;
 
-    private String REGION;
+    private String region;
 
-    private String COUNTRY;
+    private String country;
 
-    private String STCD1;
+    private String stcd1;
 
-    private String STCD3;
+    private String stcd3;
 
-    private String STCD4;
+    private String stcd4;
+    
+    @Deprecated
+	public Tgteprd() { }
+
+	public Tgteprd(Tgteshkn tgteshkn, String type) {
+		super();
+		this.tgteshkn = tgteshkn;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -74,139 +83,139 @@ public class Tgteprd implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getPARVW() {
-		return PARVW;
+	public String getParvw() {
+		return parvw;
 	}
 
-	public void setPARVW(String pARVW) {
-		PARVW = pARVW;
+	public void setParvw(String parvw) {
+		this.parvw = parvw;
 	}
 
-	public String getPARID() {
-		return PARID;
+	public String getParid() {
+		return parid;
 	}
 
-	public void setPARID(String pARID) {
-		PARID = pARID;
+	public void setParid(String parid) {
+		this.parid = parid;
 	}
 
-	public String getNAME1() {
-		return NAME1;
+	public String getName1() {
+		return name1;
 	}
 
-	public void setNAME1(String nAME1) {
-		NAME1 = nAME1;
+	public void setName1(String name1) {
+		this.name1 = name1;
 	}
 
-	public String getNAME2() {
-		return NAME2;
+	public String getName2() {
+		return name2;
 	}
 
-	public void setNAME2(String nAME2) {
-		NAME2 = nAME2;
+	public void setName2(String name2) {
+		this.name2 = name2;
 	}
 
-	public String getSTREET() {
-		return STREET;
+	public String getStreet() {
+		return street;
 	}
 
-	public void setSTREET(String sTREET) {
-		STREET = sTREET;
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
-	public String getHOUSE_NUM1() {
-		return HOUSE_NUM1;
+	public String getHouse_num1() {
+		return house_num1;
 	}
 
-	public void setHOUSE_NUM1(String hOUSE_NUM1) {
-		HOUSE_NUM1 = hOUSE_NUM1;
+	public void setHouse_num1(String house_num1) {
+		this.house_num1 = house_num1;
 	}
 
-	public String getHOUSE_NUM2() {
-		return HOUSE_NUM2;
+	public String getHouse_num2() {
+		return house_num2;
 	}
 
-	public void setHOUSE_NUM2(String hOUSE_NUM2) {
-		HOUSE_NUM2 = hOUSE_NUM2;
+	public void setHouse_num2(String house_num2) {
+		this.house_num2 = house_num2;
 	}
 
-	public String getPOST_CODE1() {
-		return POST_CODE1;
+	public String getPost_code1() {
+		return post_code1;
 	}
 
-	public void setPOST_CODE1(String pOST_CODE1) {
-		POST_CODE1 = pOST_CODE1;
+	public void setPost_code1(String post_code1) {
+		this.post_code1 = post_code1;
 	}
 
-	public String getCITY1() {
-		return CITY1;
+	public String getCity1() {
+		return city1;
 	}
 
-	public void setCITY1(String cITY1) {
-		CITY1 = cITY1;
+	public void setCity1(String city1) {
+		this.city1 = city1;
 	}
 
-	public String getCITY2() {
-		return CITY2;
+	public String getCity2() {
+		return city2;
 	}
 
-	public void setCITY2(String cITY2) {
-		CITY2 = cITY2;
+	public void setCity2(String city2) {
+		this.city2 = city2;
 	}
 
-	public String getPSTLZ() {
-		return PSTLZ;
+	public String getPstlz() {
+		return pstlz;
 	}
 
-	public void setPSTLZ(String pSTLZ) {
-		PSTLZ = pSTLZ;
+	public void setPstlz(String pstlz) {
+		this.pstlz = pstlz;
 	}
 
-	public String getREGION() {
-		return REGION;
+	public String getRegion() {
+		return region;
 	}
 
-	public void setREGION(String rEGION) {
-		REGION = rEGION;
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
-	public String getCOUNTRY() {
-		return COUNTRY;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setCOUNTRY(String cOUNTRY) {
-		COUNTRY = cOUNTRY;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
-	public String getSTCD1() {
-		return STCD1;
+	public String getStcd1() {
+		return stcd1;
 	}
 
-	public void setSTCD1(String sTCD1) {
-		STCD1 = sTCD1;
+	public void setStcd1(String stcd1) {
+		this.stcd1 = stcd1;
 	}
 
-	public String getSTCD3() {
-		return STCD3;
+	public String getStcd3() {
+		return stcd3;
 	}
 
-	public void setSTCD3(String sTCD3) {
-		STCD3 = sTCD3;
+	public void setStcd3(String stcd3) {
+		this.stcd3 = stcd3;
 	}
 
-	public String getSTCD4() {
-		return STCD4;
+	public String getStcd4() {
+		return stcd4;
 	}
 
-	public void setSTCD4(String sTCD4) {
-		STCD4 = sTCD4;
+	public void setStcd4(String stcd4) {
+		this.stcd4 = stcd4;
 	}
 
 	public static long getSerialversionuid() {
@@ -240,8 +249,8 @@ public class Tgteprd implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Tgteprd [id=" + id + ", tgteshkn=" + tgteshkn.toString() + "]";
+		return "Tgteprd [id=" + id + ", tgteshkn=" + tgteshkn.getId() + ", type=" + type + "]";
 	}
-    
-    
+        
+	
 }

@@ -27,61 +27,58 @@ public class Tgteduep implements Serializable {
 	@ManyToOne
 	private Tgteshkn tgteshkn;
 	
-	private String Type;
+	private String type;
 
-    private String DUEID;
+    private String dueid;
 
-    private String DUEPOSNR;
+    private String dueposnr;
 
-    private String DUENUM;
+    private String duenum;
 
-    private String DUEITM;
+    private String dueitm;
 
-    private String RUCNUM;
+    private String rucnum;
             
-    private String PRCFOB;
+    private String prcfob;
 
-    private String CDLANDD;
+    private String cdlandd;
 
-    private String MENGE;
+    private String menge;
 
-    private String NETWR;
+    private String netwr;
 
-    private String MENGE_TRIB;
+    private String menge_trib;
 
-    private String NTGEW;
+    private String ntgew;
 
-    private String ENQDM;
+    private String enqdm;
 
-    private String PRVDOCID;
+    private String prvdocid;
 
-    private String PRVTPCODE;
+    private String prvtpcode;
     
-    private String PCTCOM;
+    private String pctcom;
 
-    private String CHAVENFE;
+    private String chavenfe;
 
-    private String TPCDREM;
+    private String tpcdrem;
 
-    private String CNPJCPF;
+    private String cnpjcpf;
 
-    private String CHAVENF_FORM;
+    private String chavenf_form;
 
-    private String CDNFR;
+    private String cdnfr;
 
-    private String CPNJCPFEXP;
+    private String cpnjcpfexp;
+    
+    @Deprecated
+    public Tgteduep() { }
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduep")
-    private List<AddinfoTabTgteduep> ADDINFO_TAB = new ArrayList<>();
-
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduep")
-    private List<NferefTabTgteduep> NFEREF_TAB = new ArrayList<>();
-
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduep")
-    private List<AtoconTabTgteduep> ATOCON_TAB = new ArrayList<>();
-
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduep")
-    private List<DuetribTabTgteduep> DUEATRIB_TAB = new ArrayList<>();
+	public Tgteduep(Tgteshkn tgteshkn, String type) {
+		super();
+		this.tgteshkn = tgteshkn;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -100,211 +97,179 @@ public class Tgteduep implements Serializable {
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getDUEPOSNR() {
-		return DUEPOSNR;
+	public String getDueposnr() {
+		return dueposnr;
 	}
 
-	public void setDUEPOSNR(String dUEPOSNR) {
-		DUEPOSNR = dUEPOSNR;
+	public void setDueposnr(String dueposnr) {
+		this.dueposnr = dueposnr;
 	}
 
-	public String getDUENUM() {
-		return DUENUM;
+	public String getDuenum() {
+		return duenum;
 	}
 
-	public void setDUENUM(String dUENUM) {
-		DUENUM = dUENUM;
+	public void setDuenum(String duenum) {
+		this.duenum = duenum;
 	}
 
-	public String getDUEITM() {
-		return DUEITM;
+	public String getDueitm() {
+		return dueitm;
 	}
 
-	public void setDUEITM(String dUEITM) {
-		DUEITM = dUEITM;
+	public void setDueitm(String dueitm) {
+		this.dueitm = dueitm;
 	}
 
-	public String getRUCNUM() {
-		return RUCNUM;
+	public String getRucnum() {
+		return rucnum;
 	}
 
-	public void setRUCNUM(String rUCNUM) {
-		RUCNUM = rUCNUM;
+	public void setRucnum(String rucnum) {
+		this.rucnum = rucnum;
 	}
 
-	public String getPRCFOB() {
-		return PRCFOB;
+	public String getPrcfob() {
+		return prcfob;
 	}
 
-	public void setPRCFOB(String pRCFOB) {
-		PRCFOB = pRCFOB;
+	public void setPrcfob(String prcfob) {
+		this.prcfob = prcfob;
 	}
 
-	public String getCDLANDD() {
-		return CDLANDD;
+	public String getCdlandd() {
+		return cdlandd;
 	}
 
-	public void setCDLANDD(String cDLANDD) {
-		CDLANDD = cDLANDD;
+	public void setCdlandd(String cdlandd) {
+		this.cdlandd = cdlandd;
 	}
 
-	public String getMENGE() {
-		return MENGE;
+	public String getMenge() {
+		return menge;
 	}
 
-	public void setMENGE(String mENGE) {
-		MENGE = mENGE;
+	public void setMenge(String menge) {
+		this.menge = menge;
 	}
 
-	public String getNETWR() {
-		return NETWR;
+	public String getNetwr() {
+		return netwr;
 	}
 
-	public void setNETWR(String nETWR) {
-		NETWR = nETWR;
+	public void setNetwr(String netwr) {
+		this.netwr = netwr;
 	}
 
-	public String getMENGE_TRIB() {
-		return MENGE_TRIB;
+	public String getMenge_trib() {
+		return menge_trib;
 	}
 
-	public void setMENGE_TRIB(String mENGE_TRIB) {
-		MENGE_TRIB = mENGE_TRIB;
+	public void setMenge_trib(String menge_trib) {
+		this.menge_trib = menge_trib;
 	}
 
-	public String getNTGEW() {
-		return NTGEW;
+	public String getNtgew() {
+		return ntgew;
 	}
 
-	public void setNTGEW(String nTGEW) {
-		NTGEW = nTGEW;
+	public void setNtgew(String ntgew) {
+		this.ntgew = ntgew;
 	}
 
-	public String getENQDM() {
-		return ENQDM;
+	public String getEnqdm() {
+		return enqdm;
 	}
 
-	public void setENQDM(String eNQDM) {
-		ENQDM = eNQDM;
+	public void setEnqdm(String enqdm) {
+		this.enqdm = enqdm;
 	}
 
-	public String getPRVDOCID() {
-		return PRVDOCID;
+	public String getPrvdocid() {
+		return prvdocid;
 	}
 
-	public void setPRVDOCID(String pRVDOCID) {
-		PRVDOCID = pRVDOCID;
+	public void setPrvdocid(String prvdocid) {
+		this.prvdocid = prvdocid;
 	}
 
-	public String getPRVTPCODE() {
-		return PRVTPCODE;
+	public String getPrvtpcode() {
+		return prvtpcode;
 	}
 
-	public void setPRVTPCODE(String pRVTPCODE) {
-		PRVTPCODE = pRVTPCODE;
+	public void setPrvtpcode(String prvtpcode) {
+		this.prvtpcode = prvtpcode;
 	}
 
-	public String getPCTCOM() {
-		return PCTCOM;
+	public String getPctcom() {
+		return pctcom;
 	}
 
-	public void setPCTCOM(String pCTCOM) {
-		PCTCOM = pCTCOM;
+	public void setPctcom(String pctcom) {
+		this.pctcom = pctcom;
 	}
 
-	public String getCHAVENFE() {
-		return CHAVENFE;
+	public String getChavenfe() {
+		return chavenfe;
 	}
 
-	public void setCHAVENFE(String cHAVENFE) {
-		CHAVENFE = cHAVENFE;
+	public void setChavenfe(String chavenfe) {
+		this.chavenfe = chavenfe;
 	}
 
-	public String getTPCDREM() {
-		return TPCDREM;
+	public String getTpcdrem() {
+		return tpcdrem;
 	}
 
-	public void setTPCDREM(String tPCDREM) {
-		TPCDREM = tPCDREM;
+	public void setTpcdrem(String tpcdrem) {
+		this.tpcdrem = tpcdrem;
 	}
 
-	public String getCNPJCPF() {
-		return CNPJCPF;
+	public String getCnpjcpf() {
+		return cnpjcpf;
 	}
 
-	public void setCNPJCPF(String cNPJCPF) {
-		CNPJCPF = cNPJCPF;
+	public void setCnpjcpf(String cnpjcpf) {
+		this.cnpjcpf = cnpjcpf;
 	}
 
-	public String getCHAVENF_FORM() {
-		return CHAVENF_FORM;
+	public String getChavenf_form() {
+		return chavenf_form;
 	}
 
-	public void setCHAVENF_FORM(String cHAVENF_FORM) {
-		CHAVENF_FORM = cHAVENF_FORM;
+	public void setChavenf_form(String chavenf_form) {
+		this.chavenf_form = chavenf_form;
 	}
 
-	public String getCDNFR() {
-		return CDNFR;
+	public String getCdnfr() {
+		return cdnfr;
 	}
 
-	public void setCDNFR(String cDNFR) {
-		CDNFR = cDNFR;
+	public void setCdnfr(String cdnfr) {
+		this.cdnfr = cdnfr;
 	}
 
-	public String getCPNJCPFEXP() {
-		return CPNJCPFEXP;
+	public String getCpnjcpfexp() {
+		return cpnjcpfexp;
 	}
 
-	public void setCPNJCPFEXP(String cPNJCPFEXP) {
-		CPNJCPFEXP = cPNJCPFEXP;
-	}
-
-	public List<AddinfoTabTgteduep> getADDINFO_TAB() {
-		return ADDINFO_TAB;
-	}
-
-	public void setADDINFO_TAB(List<AddinfoTabTgteduep> aDDINFO_TAB) {
-		ADDINFO_TAB = aDDINFO_TAB;
-	}
-
-	public List<NferefTabTgteduep> getNFEREF_TAB() {
-		return NFEREF_TAB;
-	}
-
-	public void setNFEREF_TAB(List<NferefTabTgteduep> nFEREF_TAB) {
-		NFEREF_TAB = nFEREF_TAB;
-	}
-
-	public List<AtoconTabTgteduep> getATOCON_TAB() {
-		return ATOCON_TAB;
-	}
-
-	public void setATOCON_TAB(List<AtoconTabTgteduep> aTOCON_TAB) {
-		ATOCON_TAB = aTOCON_TAB;
-	}
-
-	public List<DuetribTabTgteduep> getDUEATRIB_TAB() {
-		return DUEATRIB_TAB;
-	}
-
-	public void setDUEATRIB_TAB(List<DuetribTabTgteduep> dUEATRIB_TAB) {
-		DUEATRIB_TAB = dUEATRIB_TAB;
+	public void setCpnjcpfexp(String cpnjcpfexp) {
+		this.cpnjcpfexp = cpnjcpfexp;
 	}
 
 	public static long getSerialversionuid() {
@@ -338,8 +303,9 @@ public class Tgteduep implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Tgteduep [id=" + id + ", tgteshkn=" + tgteshkn.toString() + ", DUEID=" + DUEID + "]";
+		return "Tgteduep [id=" + id + ", tgteshkn=" + tgteshkn.getId() + "]";
 	}
-	
+    
+    
     
 }

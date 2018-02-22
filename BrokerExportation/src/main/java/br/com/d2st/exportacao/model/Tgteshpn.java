@@ -28,94 +28,105 @@ public class Tgteshpn implements Serializable{
 	@ManyToOne
 	private Tgteshkn tgteshkn;
 
-	private String Type;
+	private String type;
 
 	@Transient
 	@NotEmpty
-    private String SBELN;
+    private String sbeln;
 
-    private String SBELP;
+    private String sbelp;
 
-    private String NBELP;
+    private String nbelp;
             
-    private String DOCFAT;
+    private String docfat;
 
-    private String ITMFAT;
+    private String itmfat;
     
-    private String MATNR;
+    private String matnr;
 
-    private String MAKTX;
+    private String maktx;
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshpn")
-    private List<MaktxText> MAKTX_TEXT = new ArrayList<>();
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshpn", orphanRemoval=true)
+    private List<MaktxText> maktx_text = new ArrayList<>();
 
-    private String QTDITM;
+    private String qtditm;
 
-    private String NETPR;
+    private String netpr;
 
-    private String KPEIN;
+    private String kpein;
 
-    private String MEINS;
+    private String meins;
 
-    private String NETWR;
+    private String netwr;
 
-    private String FRTLOC;
+    private String frtloc;
 
-    private String FRTINT;
+    private String frtint;
 
-    private String SEGINT;
+    private String segint;
 
-    private String PRCFOB;
+    private String prcfob;
 
-    private String PRCEXW;
+    private String prcexw;
 
-    private String PCTCOM;
+    private String pctcom;
 
-    private String VLRCOM;
+    private String vlrcom;
 
-    private String RENUM;
+    private String renum;
 
-    private String ITMRE;
+    private String itmre;
 
-    private String ENQDM;
+    private String enqdm;
 
-    private String BRGEW;
+    private String brgew;
 
-    private String NTGEW;
+    private String ntgew;
 
-    private String GEWEI;
+    private String gewei;
 
-    private String VOLUM;
+    private String volum;
             
-    private String VOLEH;
+    private String voleh;
 
-    private String STEUC;
+    private String steuc;
 
-    private String NALADISH;
+    private String naladish;
 
-    private String FABITM;
+    private String fabitm;
 
-    private String ATOCON;
+    private String atocon;
 
-    private String AMCCPTC;
+    private String amccptc;
 
-    private String BRCCPTC;
+    private String brccptc;
 
-    private String CCROM;
+    private String ccrom;
 
-    private String FABRILUF;
+    private String fabriluf;
 
-    private String NETPRORI;
+    private String netprori;
 
-    private String KPEINORI;
+    private String kpeinori;
 
-    private String MEINSORI;
+    private String meinsori;
 
-    private String NETWRORI;
+    private String netwrori;
 
-    private String PROD;
+    private String prod;
 
-    private String FKDAT;
+    private String fkdat;
+
+    @Deprecated
+	public Tgteshpn() { }
+
+	public Tgteshpn(Tgteshkn tgteshkn, String type, String sbeln, List<MaktxText> maktx_text) {
+		super();
+		this.tgteshkn = tgteshkn;
+		this.type = type;
+		this.sbeln = sbeln;
+		this.maktx_text = maktx_text;
+	}
 
 	public Long getId() {
 		return id;
@@ -134,347 +145,347 @@ public class Tgteshpn implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getSBELN() {
-		return SBELN;
+	public String getSbeln() {
+		return sbeln;
 	}
 
-	public void setSBELN(String sBELN) {
-		SBELN = sBELN;
+	public void setSbeln(String sbeln) {
+		this.sbeln = sbeln;
 	}
 
-	public String getSBELP() {
-		return SBELP;
+	public String getSbelp() {
+		return sbelp;
 	}
 
-	public void setSBELP(String sBELP) {
-		SBELP = sBELP;
+	public void setSbelp(String sbelp) {
+		this.sbelp = sbelp;
 	}
 
-	public String getNBELP() {
-		return NBELP;
+	public String getNbelp() {
+		return nbelp;
 	}
 
-	public void setNBELP(String nBELP) {
-		NBELP = nBELP;
+	public void setNbelp(String nbelp) {
+		this.nbelp = nbelp;
 	}
 
-	public String getDOCFAT() {
-		return DOCFAT;
+	public String getDocfat() {
+		return docfat;
 	}
 
-	public void setDOCFAT(String dOCFAT) {
-		DOCFAT = dOCFAT;
+	public void setDocfat(String docfat) {
+		this.docfat = docfat;
 	}
 
-	public String getITMFAT() {
-		return ITMFAT;
+	public String getItmfat() {
+		return itmfat;
 	}
 
-	public void setITMFAT(String iTMFAT) {
-		ITMFAT = iTMFAT;
+	public void setItmfat(String itmfat) {
+		this.itmfat = itmfat;
 	}
 
-	public String getMATNR() {
-		return MATNR;
+	public String getMatnr() {
+		return matnr;
 	}
 
-	public void setMATNR(String mATNR) {
-		MATNR = mATNR;
+	public void setMatnr(String matnr) {
+		this.matnr = matnr;
 	}
 
-	public String getMAKTX() {
-		return MAKTX;
+	public String getMaktx() {
+		return maktx;
 	}
 
-	public void setMAKTX(String mAKTX) {
-		MAKTX = mAKTX;
+	public void setMaktx(String maktx) {
+		this.maktx = maktx;
 	}
 
-	public List<MaktxText> getMAKTX_TEXT() {
-		return MAKTX_TEXT;
+	public List<MaktxText> getMaktx_text() {
+		return maktx_text;
 	}
 
-	public void setMAKTX_TEXT(List<MaktxText> mAKTX_TEXT) {
-		MAKTX_TEXT = mAKTX_TEXT;
+	public void setMaktx_text(List<MaktxText> maktx_text) {
+		this.maktx_text = maktx_text;
 	}
 
-	public String getQTDITM() {
-		return QTDITM;
+	public String getQtditm() {
+		return qtditm;
 	}
 
-	public void setQTDITM(String qTDITM) {
-		QTDITM = qTDITM;
+	public void setQtditm(String qtditm) {
+		this.qtditm = qtditm;
 	}
 
-	public String getNETPR() {
-		return NETPR;
+	public String getNetpr() {
+		return netpr;
 	}
 
-	public void setNETPR(String nETPR) {
-		NETPR = nETPR;
+	public void setNetpr(String netpr) {
+		this.netpr = netpr;
 	}
 
-	public String getKPEIN() {
-		return KPEIN;
+	public String getKpein() {
+		return kpein;
 	}
 
-	public void setKPEIN(String kPEIN) {
-		KPEIN = kPEIN;
+	public void setKpein(String kpein) {
+		this.kpein = kpein;
 	}
 
-	public String getMEINS() {
-		return MEINS;
+	public String getMeins() {
+		return meins;
 	}
 
-	public void setMEINS(String mEINS) {
-		MEINS = mEINS;
+	public void setMeins(String meins) {
+		this.meins = meins;
 	}
 
-	public String getNETWR() {
-		return NETWR;
+	public String getNetwr() {
+		return netwr;
 	}
 
-	public void setNETWR(String nETWR) {
-		NETWR = nETWR;
+	public void setNetwr(String netwr) {
+		this.netwr = netwr;
 	}
 
-	public String getFRTLOC() {
-		return FRTLOC;
+	public String getFrtloc() {
+		return frtloc;
 	}
 
-	public void setFRTLOC(String fRTLOC) {
-		FRTLOC = fRTLOC;
+	public void setFrtloc(String frtloc) {
+		this.frtloc = frtloc;
 	}
 
-	public String getFRTINT() {
-		return FRTINT;
+	public String getFrtint() {
+		return frtint;
 	}
 
-	public void setFRTINT(String fRTINT) {
-		FRTINT = fRTINT;
+	public void setFrtint(String frtint) {
+		this.frtint = frtint;
 	}
 
-	public String getSEGINT() {
-		return SEGINT;
+	public String getSegint() {
+		return segint;
 	}
 
-	public void setSEGINT(String sEGINT) {
-		SEGINT = sEGINT;
+	public void setSegint(String segint) {
+		this.segint = segint;
 	}
 
-	public String getPRCFOB() {
-		return PRCFOB;
+	public String getPrcfob() {
+		return prcfob;
 	}
 
-	public void setPRCFOB(String pRCFOB) {
-		PRCFOB = pRCFOB;
+	public void setPrcfob(String prcfob) {
+		this.prcfob = prcfob;
 	}
 
-	public String getPRCEXW() {
-		return PRCEXW;
+	public String getPrcexw() {
+		return prcexw;
 	}
 
-	public void setPRCEXW(String pRCEXW) {
-		PRCEXW = pRCEXW;
+	public void setPrcexw(String prcexw) {
+		this.prcexw = prcexw;
 	}
 
-	public String getPCTCOM() {
-		return PCTCOM;
+	public String getPctcom() {
+		return pctcom;
 	}
 
-	public void setPCTCOM(String pCTCOM) {
-		PCTCOM = pCTCOM;
+	public void setPctcom(String pctcom) {
+		this.pctcom = pctcom;
 	}
 
-	public String getVLRCOM() {
-		return VLRCOM;
+	public String getVlrcom() {
+		return vlrcom;
 	}
 
-	public void setVLRCOM(String vLRCOM) {
-		VLRCOM = vLRCOM;
+	public void setVlrcom(String vlrcom) {
+		this.vlrcom = vlrcom;
 	}
 
-	public String getRENUM() {
-		return RENUM;
+	public String getRenum() {
+		return renum;
 	}
 
-	public void setRENUM(String rENUM) {
-		RENUM = rENUM;
+	public void setRenum(String renum) {
+		this.renum = renum;
 	}
 
-	public String getITMRE() {
-		return ITMRE;
+	public String getItmre() {
+		return itmre;
 	}
 
-	public void setITMRE(String iTMRE) {
-		ITMRE = iTMRE;
+	public void setItmre(String itmre) {
+		this.itmre = itmre;
 	}
 
-	public String getENQDM() {
-		return ENQDM;
+	public String getEnqdm() {
+		return enqdm;
 	}
 
-	public void setENQDM(String eNQDM) {
-		ENQDM = eNQDM;
+	public void setEnqdm(String enqdm) {
+		this.enqdm = enqdm;
 	}
 
-	public String getBRGEW() {
-		return BRGEW;
+	public String getBrgew() {
+		return brgew;
 	}
 
-	public void setBRGEW(String bRGEW) {
-		BRGEW = bRGEW;
+	public void setBrgew(String brgew) {
+		this.brgew = brgew;
 	}
 
-	public String getNTGEW() {
-		return NTGEW;
+	public String getNtgew() {
+		return ntgew;
 	}
 
-	public void setNTGEW(String nTGEW) {
-		NTGEW = nTGEW;
+	public void setNtgew(String ntgew) {
+		this.ntgew = ntgew;
 	}
 
-	public String getGEWEI() {
-		return GEWEI;
+	public String getGewei() {
+		return gewei;
 	}
 
-	public void setGEWEI(String gEWEI) {
-		GEWEI = gEWEI;
+	public void setGewei(String gewei) {
+		this.gewei = gewei;
 	}
 
-	public String getVOLUM() {
-		return VOLUM;
+	public String getVolum() {
+		return volum;
 	}
 
-	public void setVOLUM(String vOLUM) {
-		VOLUM = vOLUM;
+	public void setVolum(String volum) {
+		this.volum = volum;
 	}
 
-	public String getVOLEH() {
-		return VOLEH;
+	public String getVoleh() {
+		return voleh;
 	}
 
-	public void setVOLEH(String vOLEH) {
-		VOLEH = vOLEH;
+	public void setVoleh(String voleh) {
+		this.voleh = voleh;
 	}
 
-	public String getSTEUC() {
-		return STEUC;
+	public String getSteuc() {
+		return steuc;
 	}
 
-	public void setSTEUC(String sTEUC) {
-		STEUC = sTEUC;
+	public void setSteuc(String steuc) {
+		this.steuc = steuc;
 	}
 
-	public String getNALADISH() {
-		return NALADISH;
+	public String getNaladish() {
+		return naladish;
 	}
 
-	public void setNALADISH(String nALADISH) {
-		NALADISH = nALADISH;
+	public void setNaladish(String naladish) {
+		this.naladish = naladish;
 	}
 
-	public String getFABITM() {
-		return FABITM;
+	public String getFabitm() {
+		return fabitm;
 	}
 
-	public void setFABITM(String fABITM) {
-		FABITM = fABITM;
+	public void setFabitm(String fabitm) {
+		this.fabitm = fabitm;
 	}
 
-	public String getATOCON() {
-		return ATOCON;
+	public String getAtocon() {
+		return atocon;
 	}
 
-	public void setATOCON(String aTOCON) {
-		ATOCON = aTOCON;
+	public void setAtocon(String atocon) {
+		this.atocon = atocon;
 	}
 
-	public String getAMCCPTC() {
-		return AMCCPTC;
+	public String getAmccptc() {
+		return amccptc;
 	}
 
-	public void setAMCCPTC(String aMCCPTC) {
-		AMCCPTC = aMCCPTC;
+	public void setAmccptc(String amccptc) {
+		this.amccptc = amccptc;
 	}
 
-	public String getBRCCPTC() {
-		return BRCCPTC;
+	public String getBrccptc() {
+		return brccptc;
 	}
 
-	public void setBRCCPTC(String bRCCPTC) {
-		BRCCPTC = bRCCPTC;
+	public void setBrccptc(String brccptc) {
+		this.brccptc = brccptc;
 	}
 
-	public String getCCROM() {
-		return CCROM;
+	public String getCcrom() {
+		return ccrom;
 	}
 
-	public void setCCROM(String cCROM) {
-		CCROM = cCROM;
+	public void setCcrom(String ccrom) {
+		this.ccrom = ccrom;
 	}
 
-	public String getFABRILUF() {
-		return FABRILUF;
+	public String getFabriluf() {
+		return fabriluf;
 	}
 
-	public void setFABRILUF(String fABRILUF) {
-		FABRILUF = fABRILUF;
+	public void setFabriluf(String fabriluf) {
+		this.fabriluf = fabriluf;
 	}
 
-	public String getNETPRORI() {
-		return NETPRORI;
+	public String getNetprori() {
+		return netprori;
 	}
 
-	public void setNETPRORI(String nETPRORI) {
-		NETPRORI = nETPRORI;
+	public void setNetprori(String netprori) {
+		this.netprori = netprori;
 	}
 
-	public String getKPEINORI() {
-		return KPEINORI;
+	public String getKpeinori() {
+		return kpeinori;
 	}
 
-	public void setKPEINORI(String kPEINORI) {
-		KPEINORI = kPEINORI;
+	public void setKpeinori(String kpeinori) {
+		this.kpeinori = kpeinori;
 	}
 
-	public String getMEINSORI() {
-		return MEINSORI;
+	public String getMeinsori() {
+		return meinsori;
 	}
 
-	public void setMEINSORI(String mEINSORI) {
-		MEINSORI = mEINSORI;
+	public void setMeinsori(String meinsori) {
+		this.meinsori = meinsori;
 	}
 
-	public String getNETWRORI() {
-		return NETWRORI;
+	public String getNetwrori() {
+		return netwrori;
 	}
 
-	public void setNETWRORI(String nETWRORI) {
-		NETWRORI = nETWRORI;
+	public void setNetwrori(String netwrori) {
+		this.netwrori = netwrori;
 	}
 
-	public String getPROD() {
-		return PROD;
+	public String getProd() {
+		return prod;
 	}
 
-	public void setPROD(String pROD) {
-		PROD = pROD;
+	public void setProd(String prod) {
+		this.prod = prod;
 	}
 
-	public String getFKDAT() {
-		return FKDAT;
+	public String getFkdat() {
+		return fkdat;
 	}
 
-	public void setFKDAT(String fKDAT) {
-		FKDAT = fKDAT;
+	public void setFkdat(String fkdat) {
+		this.fkdat = fkdat;
 	}
 
 	public static long getSerialversionuid() {
@@ -508,7 +519,8 @@ public class Tgteshpn implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Tgteshpn [id=" + id + ", SBELN=" + SBELN + ", tgteshkn=" + tgteshkn.toString()  + "]";
+		return "Tgteshpn [id=" + id + ", tgteshkn=" + tgteshkn.getId() + ", sbeln=" + sbeln + "]";
 	}
+
     
 }

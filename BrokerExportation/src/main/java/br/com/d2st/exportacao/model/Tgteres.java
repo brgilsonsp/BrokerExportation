@@ -24,42 +24,52 @@ public class Tgteres implements Serializable {
 	@ManyToOne
 	private Tgteshkn tgteshkn;
 
-	private String Type;
+	private String type;
 
     @Transient
-	private String SBELN;
+	private String sbeln;
 
-    private String DSENUM;
+    private String dsenum;
 
-    private String RENUM;
+    private String renum;
 
-    private String ANDAT;
+    private String andat;
 
-    private String REDAT;
+    private String redat;
 
-    private String AVBDT;
+    private String avbdt;
 
-    private String CANAL;
+    private String canal;
 
-    private String DDENUM;
+    private String ddenum;
     
-    private String DDEDT;
+    private String ddedt;
 
-    private String DDESQ;
+    private String ddesq;
 
-    private String REANX;
+    private String reanx;
 
-    private String DSESQ;
+    private String dsesq;
 
-    private String DOCFAT;
+    private String docfat;
 
-    private String XBLNR;
+    private String xblnr;
 
-    private String INCO1;
+    private String inco1;
 
-    private String WAERS;
+    private String waers;
 
-    private String DDEADT;
+    private String ddeadt;
+    
+    @Deprecated
+	public Tgteres() { }
+
+	public Tgteres(Tgteshkn tgteshkn, String type, String sbeln) {
+		super();
+		this.tgteshkn = tgteshkn;
+		this.type = type;
+		this.sbeln = sbeln;
+	}
 
 	public Long getId() {
 		return id;
@@ -78,147 +88,147 @@ public class Tgteres implements Serializable {
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getSBELN() {
-		return SBELN;
+	public String getSbeln() {
+		return sbeln;
 	}
 
-	public void setSBELN(String sBELN) {
-		SBELN = sBELN;
+	public void setSbeln(String sbeln) {
+		this.sbeln = sbeln;
 	}
 
-	public String getDSENUM() {
-		return DSENUM;
+	public String getDsenum() {
+		return dsenum;
 	}
 
-	public void setDSENUM(String dSENUM) {
-		DSENUM = dSENUM;
+	public void setDsenum(String dsenum) {
+		this.dsenum = dsenum;
 	}
 
-	public String getRENUM() {
-		return RENUM;
+	public String getRenum() {
+		return renum;
 	}
 
-	public void setRENUM(String rENUM) {
-		RENUM = rENUM;
+	public void setRenum(String renum) {
+		this.renum = renum;
 	}
 
-	public String getANDAT() {
-		return ANDAT;
+	public String getAndat() {
+		return andat;
 	}
 
-	public void setANDAT(String aNDAT) {
-		ANDAT = aNDAT;
+	public void setAndat(String andat) {
+		this.andat = andat;
 	}
 
-	public String getREDAT() {
-		return REDAT;
+	public String getRedat() {
+		return redat;
 	}
 
-	public void setREDAT(String rEDAT) {
-		REDAT = rEDAT;
+	public void setRedat(String redat) {
+		this.redat = redat;
 	}
 
-	public String getAVBDT() {
-		return AVBDT;
+	public String getAvbdt() {
+		return avbdt;
 	}
 
-	public void setAVBDT(String aVBDT) {
-		AVBDT = aVBDT;
+	public void setAvbdt(String avbdt) {
+		this.avbdt = avbdt;
 	}
 
-	public String getCANAL() {
-		return CANAL;
+	public String getCanal() {
+		return canal;
 	}
 
-	public void setCANAL(String cANAL) {
-		CANAL = cANAL;
+	public void setCanal(String canal) {
+		this.canal = canal;
 	}
 
-	public String getDDENUM() {
-		return DDENUM;
+	public String getDdenum() {
+		return ddenum;
 	}
 
-	public void setDDENUM(String dDENUM) {
-		DDENUM = dDENUM;
+	public void setDdenum(String ddenum) {
+		this.ddenum = ddenum;
 	}
 
-	public String getDDEDT() {
-		return DDEDT;
+	public String getDdedt() {
+		return ddedt;
 	}
 
-	public void setDDEDT(String dDEDT) {
-		DDEDT = dDEDT;
+	public void setDdedt(String ddedt) {
+		this.ddedt = ddedt;
 	}
 
-	public String getDDESQ() {
-		return DDESQ;
+	public String getDdesq() {
+		return ddesq;
 	}
 
-	public void setDDESQ(String dDESQ) {
-		DDESQ = dDESQ;
+	public void setDdesq(String ddesq) {
+		this.ddesq = ddesq;
 	}
 
-	public String getREANX() {
-		return REANX;
+	public String getReanx() {
+		return reanx;
 	}
 
-	public void setREANX(String rEANX) {
-		REANX = rEANX;
+	public void setReanx(String reanx) {
+		this.reanx = reanx;
 	}
 
-	public String getDSESQ() {
-		return DSESQ;
+	public String getDsesq() {
+		return dsesq;
 	}
 
-	public void setDSESQ(String dSESQ) {
-		DSESQ = dSESQ;
+	public void setDsesq(String dsesq) {
+		this.dsesq = dsesq;
 	}
 
-	public String getDOCFAT() {
-		return DOCFAT;
+	public String getDocfat() {
+		return docfat;
 	}
 
-	public void setDOCFAT(String dOCFAT) {
-		DOCFAT = dOCFAT;
+	public void setDocfat(String docfat) {
+		this.docfat = docfat;
 	}
 
-	public String getXBLNR() {
-		return XBLNR;
+	public String getXblnr() {
+		return xblnr;
 	}
 
-	public void setXBLNR(String xBLNR) {
-		XBLNR = xBLNR;
+	public void setXblnr(String xblnr) {
+		this.xblnr = xblnr;
 	}
 
-	public String getINCO1() {
-		return INCO1;
+	public String getInco1() {
+		return inco1;
 	}
 
-	public void setINCO1(String iNCO1) {
-		INCO1 = iNCO1;
+	public void setInco1(String inco1) {
+		this.inco1 = inco1;
 	}
 
-	public String getWAERS() {
-		return WAERS;
+	public String getWaers() {
+		return waers;
 	}
 
-	public void setWAERS(String wAERS) {
-		WAERS = wAERS;
+	public void setWaers(String waers) {
+		this.waers = waers;
 	}
 
-	public String getDDEADT() {
-		return DDEADT;
+	public String getDdeadt() {
+		return ddeadt;
 	}
 
-	public void setDDEADT(String dDEADT) {
-		DDEADT = dDEADT;
+	public void setDdeadt(String ddeadt) {
+		this.ddeadt = ddeadt;
 	}
 
 	public static long getSerialversionuid() {
@@ -252,6 +262,8 @@ public class Tgteres implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Tgteres [id=" + id + ", tgteshkn=" + tgteshkn.toString() + "]";
+		return "Tgteres [id=" + id + ", tgteshkn=" + tgteshkn.getId() + ", sbeln=" + sbeln + "]";
 	}
+
+    
 }

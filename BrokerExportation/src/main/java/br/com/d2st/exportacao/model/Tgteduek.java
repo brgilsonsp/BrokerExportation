@@ -27,37 +27,49 @@ public class Tgteduek implements Serializable {
 	@ManyToOne
 	private Tgteshkn tgteshkn;
 	
-	private String Type;
+	private String type;
 
-    private String DUEID;
+    private String dueid;
 
-    private String XLOCEMBARQ;
+    private String xlocembarq;
 
-    private String XLOCDESPACHO;
+    private String xlocdespacho;
 
-    private String CDRAD;
+    private String cdrad;
 
-    private String EMRAD;
+    private String emrad;
     
-    private String LATITUDE;
+    private String latitude;
 
-    private String LONGITUDE;
+    private String longitude;
 
-    private String CDRAE;
+    private String cdrae;
 
-    private String EMRAE;
+    private String emrae;
 
-    private String CNPJ_DESP;
+    private String cnpj_desp;
 
-    private String WAERS;
+    private String waers;
 
-    private String INCO1;
+    private String inco1;
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek")
-    private List<AddressTabTgteduek> ADDRESS_TAB = new ArrayList<>();
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek", orphanRemoval=true)
+    private List<AddressTabTgteduek> address_tab = new ArrayList<>();
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek")
-    private List<AddinfoTabTgteduek> ADDINFO_TAB = new ArrayList<>();
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek", orphanRemoval=true)
+    private List<AddinfoTabTgteduek> addinfo_tab = new ArrayList<>();
+    
+    @Deprecated
+	public Tgteduek() { }
+    
+	public Tgteduek(Tgteshkn tgteshkn, String type, String dueid, List<AddressTabTgteduek> address_tab,
+			List<AddinfoTabTgteduek> addinfo_tab) {
+		this.tgteshkn = tgteshkn;
+		type = type;
+		dueid = dueid;
+		address_tab = address_tab;
+		addinfo_tab = addinfo_tab;
+	}
 
 	public Long getId() {
 		return id;
@@ -76,123 +88,123 @@ public class Tgteduek implements Serializable {
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getXLOCEMBARQ() {
-		return XLOCEMBARQ;
+	public String getXlocembarq() {
+		return xlocembarq;
 	}
 
-	public void setXLOCEMBARQ(String xLOCEMBARQ) {
-		XLOCEMBARQ = xLOCEMBARQ;
+	public void setXlocembarq(String xlocembarq) {
+		this.xlocembarq = xlocembarq;
 	}
 
-	public String getXLOCDESPACHO() {
-		return XLOCDESPACHO;
+	public String getXlocdespacho() {
+		return xlocdespacho;
 	}
 
-	public void setXLOCDESPACHO(String xLOCDESPACHO) {
-		XLOCDESPACHO = xLOCDESPACHO;
+	public void setXlocdespacho(String xlocdespacho) {
+		this.xlocdespacho = xlocdespacho;
 	}
 
-	public String getCDRAD() {
-		return CDRAD;
+	public String getCdrad() {
+		return cdrad;
 	}
 
-	public void setCDRAD(String cDRAD) {
-		CDRAD = cDRAD;
+	public void setCdrad(String cdrad) {
+		this.cdrad = cdrad;
 	}
 
-	public String getEMRAD() {
-		return EMRAD;
+	public String getEmrad() {
+		return emrad;
 	}
 
-	public void setEMRAD(String eMRAD) {
-		EMRAD = eMRAD;
+	public void setEmrad(String emrad) {
+		this.emrad = emrad;
 	}
 
-	public String getLATITUDE() {
-		return LATITUDE;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setLATITUDE(String lATITUDE) {
-		LATITUDE = lATITUDE;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
-	public String getLONGITUDE() {
-		return LONGITUDE;
+	public String getLongitude() {
+		return longitude;
 	}
 
-	public void setLONGITUDE(String lONGITUDE) {
-		LONGITUDE = lONGITUDE;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
-	public String getCDRAE() {
-		return CDRAE;
+	public String getCdrae() {
+		return cdrae;
 	}
 
-	public void setCDRAE(String cDRAE) {
-		CDRAE = cDRAE;
+	public void setCdrae(String cdrae) {
+		this.cdrae = cdrae;
 	}
 
-	public String getEMRAE() {
-		return EMRAE;
+	public String getEmrae() {
+		return emrae;
 	}
 
-	public void setEMRAE(String eMRAE) {
-		EMRAE = eMRAE;
+	public void setEmrae(String emrae) {
+		this.emrae = emrae;
 	}
 
-	public String getCNPJ_DESP() {
-		return CNPJ_DESP;
+	public String getCnpj_desp() {
+		return cnpj_desp;
 	}
 
-	public void setCNPJ_DESP(String cNPJ_DESP) {
-		CNPJ_DESP = cNPJ_DESP;
+	public void setCnpj_desp(String cnpj_desp) {
+		this.cnpj_desp = cnpj_desp;
 	}
 
-	public String getWAERS() {
-		return WAERS;
+	public String getWaers() {
+		return waers;
 	}
 
-	public void setWAERS(String wAERS) {
-		WAERS = wAERS;
+	public void setWaers(String waers) {
+		this.waers = waers;
 	}
 
-	public String getINCO1() {
-		return INCO1;
+	public String getInco1() {
+		return inco1;
 	}
 
-	public void setINCO1(String iNCO1) {
-		INCO1 = iNCO1;
+	public void setInco1(String inco1) {
+		this.inco1 = inco1;
 	}
 
-	public List<AddressTabTgteduek> getADDRESS_TAB() {
-		return ADDRESS_TAB;
+	public List<AddressTabTgteduek> getAddress_tab() {
+		return address_tab;
 	}
 
-	public void setADDRESS_TAB(List<AddressTabTgteduek> aDDRESS_TAB) {
-		ADDRESS_TAB = aDDRESS_TAB;
+	public void setAddress_tab(List<AddressTabTgteduek> address_tab) {
+		this.address_tab = address_tab;
 	}
 
-	public List<AddinfoTabTgteduek> getADDINFO_TAB() {
-		return ADDINFO_TAB;
+	public List<AddinfoTabTgteduek> getAddinfo_tab() {
+		return addinfo_tab;
 	}
 
-	public void setADDINFO_TAB(List<AddinfoTabTgteduek> aDDINFO_TAB) {
-		ADDINFO_TAB = aDDINFO_TAB;
+	public void setAddinfo_tab(List<AddinfoTabTgteduek> addinfo_tab) {
+		this.addinfo_tab = addinfo_tab;
 	}
 
 	public static long getSerialversionuid() {
@@ -226,8 +238,8 @@ public class Tgteduek implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Tgteduek [id=" + id + ", tgteshkn=" + tgteshkn.toString() + ", DUEID=" + DUEID + "]";
+		return "Tgteduek [id=" + id + ", tgteshkn=" + tgteshkn.getId() + ", type=" + type + "]";
 	}
-    
-    
+	
+	
 }

@@ -23,15 +23,24 @@ public class AddressTabTgteduek implements Serializable{
 	@ManyToOne
 	private Tgteduek tgteduek;
 
-	public String Type;
+	public String type;
 
-	private String DUEID;
+	private String dueid;
 
-    private String ADRNR;
+    private String adrnr;
 
-    private String LINESEQ;
+    private String lineseq;
 
-    private String CONTENT;
+    private String content;
+
+    @Deprecated
+	public AddressTabTgteduek() { }
+
+	public AddressTabTgteduek(Tgteduek tgteduek, String type) {
+		super();
+		this.tgteduek = tgteduek;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -50,43 +59,43 @@ public class AddressTabTgteduek implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getADRNR() {
-		return ADRNR;
+	public String getAdrnr() {
+		return adrnr;
 	}
 
-	public void setADRNR(String aDRNR) {
-		ADRNR = aDRNR;
+	public void setAdrnr(String adrnr) {
+		this.adrnr = adrnr;
 	}
 
-	public String getLINESEQ() {
-		return LINESEQ;
+	public String getLineseq() {
+		return lineseq;
 	}
 
-	public void setLINESEQ(String lINESEQ) {
-		LINESEQ = lINESEQ;
+	public void setLineseq(String lineseq) {
+		this.lineseq = lineseq;
 	}
 
-	public String getCONTENT() {
-		return CONTENT;
+	public String getContent() {
+		return content;
 	}
 
-	public void setCONTENT(String cONTENT) {
-		CONTENT = cONTENT;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public static long getSerialversionuid() {
@@ -120,9 +129,8 @@ public class AddressTabTgteduek implements Serializable{
 
 	@Override
 	public String toString() {
-		return "AddressTabTgteduek [id=" + id + ", tgteduek=" + tgteduek.getId() + ", DUEID=" + DUEID + "]";
+		return "AddressTabTgteduek [id=" + id + ", tgteduek=" + tgteduek.getId() + ", type=" + type + "]";
 	}
-    
-    
 
+    
 }

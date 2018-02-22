@@ -23,23 +23,32 @@ public class NferefTabTgteduep implements Serializable{
 	@ManyToOne
 	private Tgteduep tgteduep;
 	
-	private String Type;
+	private String type;
 
-    private String DUEID;
+    private String dueid;
 
-    private String DUEPOSNR;
+    private String dueposnr;
 
-    private String DOCNUM;
+    private String docnum;
 
-    private String ITMNUM;
+    private String itmnum;
     
-    private String NFENUM;
+    private String nfenum;
 
-    private String SERIES;
+    private String series;
 
-    private String PARID;
+    private String parid;
 
-    private String MENGE;
+    private String menge;
+
+    @Deprecated
+	public NferefTabTgteduep() { }
+
+	public NferefTabTgteduep(Tgteduep tgteduep, String type) {
+		super();
+		this.tgteduep = tgteduep;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -58,75 +67,75 @@ public class NferefTabTgteduep implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getDUEPOSNR() {
-		return DUEPOSNR;
+	public String getDueposnr() {
+		return dueposnr;
 	}
 
-	public void setDUEPOSNR(String dUEPOSNR) {
-		DUEPOSNR = dUEPOSNR;
+	public void setDueposnr(String dueposnr) {
+		this.dueposnr = dueposnr;
 	}
 
-	public String getDOCNUM() {
-		return DOCNUM;
+	public String getDocnum() {
+		return docnum;
 	}
 
-	public void setDOCNUM(String dOCNUM) {
-		DOCNUM = dOCNUM;
+	public void setDocnum(String docnum) {
+		this.docnum = docnum;
 	}
 
-	public String getITMNUM() {
-		return ITMNUM;
+	public String getItmnum() {
+		return itmnum;
 	}
 
-	public void setITMNUM(String iTMNUM) {
-		ITMNUM = iTMNUM;
+	public void setItmnum(String itmnum) {
+		this.itmnum = itmnum;
 	}
 
-	public String getNFENUM() {
-		return NFENUM;
+	public String getNfenum() {
+		return nfenum;
 	}
 
-	public void setNFENUM(String nFENUM) {
-		NFENUM = nFENUM;
+	public void setNfenum(String nfenum) {
+		this.nfenum = nfenum;
 	}
 
-	public String getSERIES() {
-		return SERIES;
+	public String getSeries() {
+		return series;
 	}
 
-	public void setSERIES(String sERIES) {
-		SERIES = sERIES;
+	public void setSeries(String series) {
+		this.series = series;
 	}
 
-	public String getPARID() {
-		return PARID;
+	public String getParid() {
+		return parid;
 	}
 
-	public void setPARID(String pARID) {
-		PARID = pARID;
+	public void setParid(String parid) {
+		this.parid = parid;
 	}
 
-	public String getMENGE() {
-		return MENGE;
+	public String getMenge() {
+		return menge;
 	}
 
-	public void setMENGE(String mENGE) {
-		MENGE = mENGE;
+	public void setMenge(String menge) {
+		this.menge = menge;
 	}
 
 	public static long getSerialversionuid() {
@@ -160,7 +169,9 @@ public class NferefTabTgteduep implements Serializable{
 
 	@Override
 	public String toString() {
-		return "NferefTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", DUEID=" + DUEID + "]";
+		return "NferefTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", type=" + type + "]";
 	}
+    
+    
 
 }

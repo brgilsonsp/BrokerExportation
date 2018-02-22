@@ -8,11 +8,15 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
@@ -30,19 +34,37 @@ public class StatusResponse implements Serializable  {
 	
 	private String dataResponse;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private MessageNumber messageNumber;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private MessageKind messageKind;
 	
 	private String sbeln;
 	
+	@NotEmpty
 	@ManyToOne
 	private Client client;	
 	
-	@OneToMany(cascade=CascadeType.REMOVE, mappedBy="statusResponse")
+	@OneToMany(cascade= {CascadeType.REMOVE, CascadeType.PERSIST}, mappedBy="statusResponse", orphanRemoval=true, fetch = FetchType.EAGER)
 	private List<ErrorResponse> errorsResponse = new ArrayList<>();
+	
+	@Deprecated
+	public StatusResponse() { }
+
+	public StatusResponse(String code, String descr, String dataResponse, MessageNumber messageNumber,
+			MessageKind messageKind, String sbeln, Client client, List<ErrorResponse> errorsResponse) {
+		this.code = code;
+		this.descr = descr;
+		this.dataResponse = dataResponse;
+		this.messageNumber = messageNumber;
+		this.messageKind = messageKind;
+		this.sbeln = sbeln;
+		this.client = client;
+		this.errorsResponse = errorsResponse;
+	}
 
 	public Long getId() {
 		return id;

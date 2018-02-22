@@ -23,15 +23,25 @@ public class DuetribTabTgteduep implements Serializable{
 	@ManyToOne
 	private Tgteduep tgteduep;
 	
-	private String Type;
+	private String type;
 
-    private String DUEID;
+    private String dueid;
 
-    private String DUEPOSNR;
+    private String dueposnr;
 
-    private String DUEATRIB;
+    private String dueatrib;
 
-    private String DESCRIPTION;
+    private String description;
+
+    @Deprecated
+	public DuetribTabTgteduep() { }
+
+	public DuetribTabTgteduep(Long id, Tgteduep tgteduep, String type) {
+		super();
+		this.id = id;
+		this.tgteduep = tgteduep;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -50,43 +60,43 @@ public class DuetribTabTgteduep implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getDUEID() {
-		return DUEID;
+	public String getDueid() {
+		return dueid;
 	}
 
-	public void setDUEID(String dUEID) {
-		DUEID = dUEID;
+	public void setDueid(String dueid) {
+		this.dueid = dueid;
 	}
 
-	public String getDUEPOSNR() {
-		return DUEPOSNR;
+	public String getDueposnr() {
+		return dueposnr;
 	}
 
-	public void setDUEPOSNR(String dUEPOSNR) {
-		DUEPOSNR = dUEPOSNR;
+	public void setDueposnr(String dueposnr) {
+		this.dueposnr = dueposnr;
 	}
 
-	public String getDUEATRIB() {
-		return DUEATRIB;
+	public String getDueatrib() {
+		return dueatrib;
 	}
 
-	public void setDUEATRIB(String dUEATRIB) {
-		DUEATRIB = dUEATRIB;
+	public void setDueatrib(String dueatrib) {
+		this.dueatrib = dueatrib;
 	}
 
-	public String getDESCRIPTION() {
-		return DESCRIPTION;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDESCRIPTION(String dESCRIPTION) {
-		DESCRIPTION = dESCRIPTION;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public static long getSerialversionuid() {
@@ -120,9 +130,8 @@ public class DuetribTabTgteduep implements Serializable{
 
 	@Override
 	public String toString() {
-		return "DuetribTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", DUEID=" + DUEID + "]";
+		return "DuetribTabTgteduep [id=" + id + ", tgteduep=" + tgteduep.getId() + ", type=" + type + "]";
 	}
-    
-    
-
+	
+	
 }

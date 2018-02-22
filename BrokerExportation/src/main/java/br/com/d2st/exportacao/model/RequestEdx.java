@@ -5,12 +5,20 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Request implements Serializable{
+@Table(uniqueConstraints = @UniqueConstraint(columnNames= {"messageNumber","messageKind"}))
+public class RequestEdx implements Serializable{
 
 	private static final long serialVersionUID = 2735216481371985530L;
 	
@@ -18,17 +26,38 @@ public class Request implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty
 	private String edx;
 	
+	@NotEmpty
 	private String type;
 	
+	@NotEmpty
 	private String acao;
 	
+	@NotNull
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Str str;
+	
+	@NotEmpty
 	@Enumerated(EnumType.STRING)
 	private MessageNumber messageNumber;
 	
+	@NotEmpty
 	@Enumerated(EnumType.STRING)
 	private MessageKind messageKind;
+	
+	@Deprecated
+	public RequestEdx() { }
+	
+	public RequestEdx(String edx, String type, String acao, MessageNumber messageNumber,
+			MessageKind messageKind) {
+		this.edx = edx;
+		this.type = type;
+		this.acao = acao;
+		this.messageNumber = messageNumber;
+		this.messageKind = messageKind;
+	}
 
 	public Long getId() {
 		return id;
@@ -60,6 +89,14 @@ public class Request implements Serializable{
 
 	public void setAcao(String acao) {
 		this.acao = acao;
+	}
+
+	public Str getStr() {
+		return str;
+	}
+
+	public void setStr(Str str) {
+		this.str = str;
 	}
 
 	public MessageNumber getMessageNumber() {
@@ -99,7 +136,7 @@ public class Request implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Request other = (Request) obj;
+		RequestEdx other = (RequestEdx) obj;
 		if (acao == null) {
 			if (other.acao != null)
 				return false;

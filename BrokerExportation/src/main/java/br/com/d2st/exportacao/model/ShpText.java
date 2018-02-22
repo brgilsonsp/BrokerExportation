@@ -23,11 +23,20 @@ public class ShpText implements Serializable{
 	@ManyToOne
 	private Tgteshkn tgteshkn;
 
-	private String Type;
+	private String type;
 
-	private String TDID;
+	private String tdid;
 
-	private String TDLINE;
+	private String tdline;
+
+	@Deprecated	
+	public ShpText() { }
+
+	public ShpText(Tgteshkn tgteshkn, String type) {
+		super();
+		this.tgteshkn = tgteshkn;
+		this.type = type;
+	}
 
 	public Long getId() {
 		return id;
@@ -46,27 +55,27 @@ public class ShpText implements Serializable{
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
-	public String getTDID() {
-		return TDID;
+	public String getTdid() {
+		return tdid;
 	}
 
-	public void setTDID(String tDID) {
-		TDID = tDID;
+	public void setTdid(String tdid) {
+		this.tdid = tdid;
 	}
 
-	public String getTDLINE() {
-		return TDLINE;
+	public String getTdline() {
+		return tdline;
 	}
 
-	public void setTDLINE(String tDLINE) {
-		TDLINE = tDLINE;
+	public void setTdline(String tdline) {
+		this.tdline = tdline;
 	}
 
 	public static long getSerialversionuid() {
@@ -100,7 +109,10 @@ public class ShpText implements Serializable{
 
 	@Override
 	public String toString() {
-		return "ShpText [id=" + id + ", tgteshkn=" + tgteshkn.toString() + "]";
+		return "ShpText [id=" + id + ", tgteshkn=" + tgteshkn.getId() + "]";
 	}
+
+	
+	
 	
 }
