@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -46,7 +47,7 @@ public class Tgteshpn implements Serializable{
 
     private String maktx;
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshpn", orphanRemoval=true)
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteshpn", orphanRemoval=true, fetch = FetchType.EAGER)
     private List<MaktxText> maktx_text = new ArrayList<>();
 
     private String qtditm;

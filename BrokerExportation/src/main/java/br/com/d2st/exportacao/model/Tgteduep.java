@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -71,16 +72,16 @@ public class Tgteduep implements Serializable {
 
     private String cpnjcpfexp;
     
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep", fetch = FetchType.EAGER)
     private List<AtoconTabTgteduep> atoconTabTgteduep = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep", fetch = FetchType.EAGER)
     private List<NferefTabTgteduep> nferefTabTgteduep = new ArrayList<>();
     
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep", fetch = FetchType.EAGER)
     private List<AddinfoTabTgteduep> addinfoTabTgteduep = new ArrayList<>();
     
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep", fetch = FetchType.EAGER)
     private List<DuetribTabTgteduep> duetribTabTgteduep = new ArrayList<>();
     
     @Deprecated

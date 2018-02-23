@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -53,10 +54,10 @@ public class Tgteduek implements Serializable {
 
     private String inco1;
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek", orphanRemoval=true)
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek", orphanRemoval=true, fetch = FetchType.EAGER)
     private List<AddressTabTgteduek> address_tab = new ArrayList<>();
 
-    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek", orphanRemoval=true)
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy="tgteduek", orphanRemoval=true, fetch = FetchType.EAGER)
     private List<AddinfoTabTgteduek> addinfo_tab = new ArrayList<>();
     
     @Deprecated
