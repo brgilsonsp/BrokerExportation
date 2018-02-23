@@ -71,6 +71,18 @@ public class Tgteduep implements Serializable {
 
     private String cpnjcpfexp;
     
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    private List<AtoconTabTgteduep> atoconTabTgteduep = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    private List<NferefTabTgteduep> nferefTabTgteduep = new ArrayList<>();
+    
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    private List<AddinfoTabTgteduep> addinfoTabTgteduep = new ArrayList<>();
+    
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "tgteduep")
+    private List<DuetribTabTgteduep> duetribTabTgteduep = new ArrayList<>();
+    
     @Deprecated
     public Tgteduep() { }
 
@@ -272,6 +284,38 @@ public class Tgteduep implements Serializable {
 		this.cpnjcpfexp = cpnjcpfexp;
 	}
 
+	public List<AtoconTabTgteduep> getAtoconTabTgteduep() {
+		return atoconTabTgteduep;
+	}
+
+	public void setAtoconTabTgteduep(List<AtoconTabTgteduep> atoconTabTgteduep) {
+		this.atoconTabTgteduep = atoconTabTgteduep;
+	}
+
+	public List<NferefTabTgteduep> getNferefTabTgteduep() {
+		return nferefTabTgteduep;
+	}
+
+	public void setNferefTabTgteduep(List<NferefTabTgteduep> nferefTabTgteduep) {
+		this.nferefTabTgteduep = nferefTabTgteduep;
+	}
+
+	public List<AddinfoTabTgteduep> getAddinfoTabTgteduep() {
+		return addinfoTabTgteduep;
+	}
+
+	public void setAddinfoTabTgteduep(List<AddinfoTabTgteduep> addinfoTabTgteduep) {
+		this.addinfoTabTgteduep = addinfoTabTgteduep;
+	}
+
+	public List<DuetribTabTgteduep> getDuetribTabTgteduep() {
+		return duetribTabTgteduep;
+	}
+
+	public void setDuetribTabTgteduep(List<DuetribTabTgteduep> duetribTabTgteduep) {
+		this.duetribTabTgteduep = duetribTabTgteduep;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -305,7 +349,4 @@ public class Tgteduep implements Serializable {
 	public String toString() {
 		return "Tgteduep [id=" + id + ", tgteshkn=" + tgteshkn.getId() + "]";
 	}
-    
-    
-    
 }

@@ -65,10 +65,10 @@ public class Tgteduek implements Serializable {
 	public Tgteduek(Tgteshkn tgteshkn, String type, String dueid, List<AddressTabTgteduek> address_tab,
 			List<AddinfoTabTgteduek> addinfo_tab) {
 		this.tgteshkn = tgteshkn;
-		type = type;
-		dueid = dueid;
-		address_tab = address_tab;
-		addinfo_tab = addinfo_tab;
+		this.type = type;
+		this.dueid = dueid;
+		this.address_tab = address_tab;
+		this.addinfo_tab = addinfo_tab;
 	}
 
 	public Long getId() {

@@ -32,7 +32,7 @@ public class MaktxText implements Serializable {
 
 	public MaktxText(Tgteshpn tgteshpn, String type) {
 		this.tgteshpn = tgteshpn;
-		type = type;
+		this.type = type;
 	}
 
 	public Long getId() {
